@@ -7,6 +7,16 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:titleTextColor="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorDarkOliveGreen"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <androidx.cardview.widget.CardView
         android:id="@+id/Cardview1"
         android:layout_width="match_parent"
@@ -18,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,17 +40,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/euphorbia"
-                android:importantForAccessibility="no" />
+                android:importantForAccessibility="no"
+                android:src="@drawable/euphorbia" />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="450dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/euphorbia"
-                android:textAlignment="center"
-                android:textSize="24sp" />
+                android:gravity="center"
+                android:text="Euphorbia"
+                android:textSize="24sp"
+                android:layout_gravity="center_vertical"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -75,9 +86,10 @@
                 android:layout_width="450dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="@string/rebutia"
-                android:textAlignment="center"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:layout_gravity="center_vertical"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -112,9 +124,10 @@
                 android:layout_width="450dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="@string/gymnocalycium"
-                android:textAlignment="center"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:layout_gravity="center_vertical"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -149,9 +162,11 @@
                 android:layout_width="450dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="@string/opuntia"
                 android:textAlignment="center"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:layout_gravity="center_vertical"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -177,7 +192,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/spinosissima"
+                android:src="@drawable/mammillaria"
                 android:importantForAccessibility="no" />
 
             <TextView
@@ -185,9 +200,10 @@
                 android:layout_width="450dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/spinosissima"
-                android:textAlignment="center"
-                android:textSize="24sp" />
+                android:gravity="center"
+                android:text="Mammillaria"
+                android:textSize="24sp"
+                android:layout_gravity="center_vertical"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

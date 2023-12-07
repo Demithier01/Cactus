@@ -13,10 +13,38 @@
         android:theme="@style/Theme.CaCtus"
         tools:targetApi="31">
         <activity
-            android:name=".Ech_page"
+            android:name=".Homepage"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Mammi_page"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Base.Theme.CaCtus" />
+        <activity
+            android:name=".Opun_page"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Base.Theme.CaCtus" />
+        <activity
+            android:name=".Gym_page"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Base.Theme.CaCtus" />
+        <activity
+            android:name=".Reb_page"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Base.Theme.CaCtus" />
+        <activity
+            android:name=".Eupho_page"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Base.Theme.CaCtus" />
+        <activity
+            android:name=".Splashscreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
