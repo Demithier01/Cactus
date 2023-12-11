@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">CaCtus</string>
     <string name="todo">TODO</string>
-    <string name="echinocactus">Echinocactus</string>
+    <string name="echinocactus">echinocactus</string>
     <string name="rebutia">Rebutia</string>
     <string name="gymnocalycium">Gymnocalycium</string>
     <string name="opuntia">Opuntia</string>
     <string name="rhipsalis">Rhipsalis</string>
     <string name="euphorbia">euphorbia</string>
-    <string name="spinosissima">spinosissima</string>
-    <string name="Spinosissima">Spinosissima</string>
+    <string name="epinosissima">Spinosissima</string>
+    <string name="euphorbias">Euphorbia (ยูฟอร์เบีย)</string>
 </resources>

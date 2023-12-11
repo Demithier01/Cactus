@@ -1,51 +1,37 @@
 package com.example.cactus
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
+import androidx.recyclerview.widget.RecyclerView.Recycler
 
 class MainActivity : AppCompatActivity() {
-    var cv1: CardView? = null
-    var cv2: CardView? = null
-    var cv3: CardView? = null
-    var cv4: CardView? = null
-    var cv5: CardView? = null
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var cactusAdapter:CactusAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
 
-        cv1 = findViewById(R.id.Cardview1)
-        cv2 = findViewById(R.id.Cardview2)
-        cv3 = findViewById(R.id.Cardview3)
-        cv4 = findViewById(R.id.Cardview4)
-        cv5 = findViewById(R.id.Cardview5)
+        cactusAdapter = CactusAdapter(CactusGenerator.getItems())
 
-        //คำสั่งเปลี่ยนหน้า
-        cv1!!.setOnClickListener{
-            val intent = Intent(this,Eupho_page::class.java)
+        cactusAdapter.onItemClick = { cactus ->
+            //ส่งข้อมูล cactus
+            val intent = Intent(this,DetailActivity::class.java)
+            intent.putExtra("cactus", cactus)
             startActivity(intent)
         }
-        cv2!!.setOnClickListener{
-            val intent = Intent(this,Reb_page::class.java)
-            startActivity(intent)
-        }
-        cv3!!.setOnClickListener{
-            val intent = Intent(this,Gym_page::class.java)
-            startActivity(intent)
-        }
-        cv4!!.setOnClickListener{
-            val intent = Intent(this,Opun_page::class.java)
-            startActivity(intent)
-        }
-        cv5!!.setOnClickListener{
-            val intent = Intent(this,Mammi_page::class.java)
-            startActivity(intent)
-        }
+        recyclerView.adapter = cactusAdapter
     }
 }

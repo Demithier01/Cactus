@@ -10,12 +10,12 @@ class Homepage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homepage)
-
+        //สร้างตัวแปรชื่อ button และนำ View ที่เป็นR.id.butnon มาเก็บไว้ในตัวแปรนี้
         val button: Button = findViewById(R.id.button)
 
-        // ตรวจสอบว่าปุ่มถูกคลิก
+        // ตรวจสอบbutton
         button.setOnClickListener {
-            // สร้าง Intent เพื่อเรียกใช้ MainActivity
+            // สร้าง Intent เรียกใช้ MainActivity
             val intent = Intent(this, MainActivity::class.java)
             // เรียกใช้ MainActivity
             startActivity(intent)

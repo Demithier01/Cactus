@@ -10,45 +10,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CaCtus"
-        tools:targetApi="31">
+        android:theme="@style/Theme.CaCtus">
+
+
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false"
+            />
         <activity
             android:name=".Homepage"
-            android:exported="false" />
+            android:exported="false"
+            />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Mammi_page"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Base.Theme.CaCtus" />
+            />
+
         <activity
-            android:name=".Opun_page"
-            android:exported="false"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Base.Theme.CaCtus" />
-        <activity
-            android:name=".Gym_page"
-            android:exported="false"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Base.Theme.CaCtus" />
-        <activity
-            android:name=".Reb_page"
-            android:exported="false"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Base.Theme.CaCtus" />
-        <activity
-            android:name=".Eupho_page"
-            android:exported="false"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Base.Theme.CaCtus" />
-        <activity
-            android:name=".Splashscreen"
-            android:exported="true">
+            android:name=".SplashScreen"
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
