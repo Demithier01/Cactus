@@ -1,9 +1,13 @@
 package com.example.cactus
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.compose.ui.text.input.KeyboardType.Companion.Uri
 import com.example.cactus.model.Cactus
 
 class DetailActivity : AppCompatActivity() {
@@ -28,5 +32,6 @@ class DetailActivity : AppCompatActivity() {
         backIcon.setOnClickListener{
             finish() //จะย้อนกลับไปหน้าก่อนหน้านี้
         }
+
     }
 }

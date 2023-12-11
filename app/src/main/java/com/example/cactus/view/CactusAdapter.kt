@@ -38,4 +38,5 @@ class CactusAdapter(private  val cactusList:List<Cactus>)
             onItemClick?.invoke(cactus)
         }
     }
+
 }
