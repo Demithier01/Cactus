@@ -20,15 +20,16 @@
             android:id="@+id/detailImageView"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:scaleType="center"
-            app:srcCompat="@drawable/gymnocalycium" />
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/euphorbia_decaryi"
+            />
 
         <TextView
             android:id="@+id/detailTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
+            android:layout_marginTop="16dp"
             android:textSize="30dp"
             android:text="TextView" />
 
@@ -37,7 +38,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="description"
-            android:layout_margin="20dp"
+            android:textSize="18dp"
+            android:layout_margin="14dp"
             />
 
         <ImageView
