@@ -39,11 +39,3 @@ class CactusAdapter(private  val cactusList:List<Cactus>)
         }
     }
 }
-//ViewHolder ช่วยให้RecyclerView ทำงานได้เร็วขึ้น โดยจะเก็บviewของitemไว้ชั่วคราว
-// และเมื่อ RecyclerView ต้องการแสดงรายการ มันจะดึง ViewHolder ที่มีอยู่มาใช้แทนที่จะสร้าง View ใหม่ทุกครั้
-
-//RecyclerView เป็นcomponent ที่ใช้แสดงรายการข้อมูลเรียงเป็นแถว
-//การทำงาน
-//LayoutManager เป็นส่วนที่ทำหน้าที่จัดเรียงตำแหน่งของ View ต่างๆ ภายใน RecyclerView
-//Adapter เป็นส่วนที่ทำหน้าที่สร้าง View ต่างๆ ภายใน RecyclerView
-//ViewHolder เป็นส่วนที่ทำหน้าที่เก็บข้อมูลของ View ต่างๆ ภายใน RecyclerView
