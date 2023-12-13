@@ -7,5 +7,6 @@ import kotlinx.parcelize.Parcelize
 data class Cactus(
     val name: String,
     val description: String,
-    val image: Int
+    val image: Int,
+    val link : String
 ): Parcelable
