@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#2C556B2F"
         android:padding="10dp">
 
         <androidx.cardview.widget.CardView
@@ -26,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/astrophytum_asterias" />
+                android:src="@drawable/ic_launcher_background" />
 
         </androidx.cardview.widget.CardView>
 
@@ -36,7 +37,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/prompt"
             android:text="text"
-            android:textSize="16dp"
+            android:textSize="18dp"
             android:textStyle="bold"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -11,4 +11,6 @@
     <string name="euphorbias">Euphorbia (ยูฟอร์เบีย)</string>
     <string name="astrophytum_asterias">Astrophytum Asterias</string>
     <string name="add_image">add image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

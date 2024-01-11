@@ -1,42 +1,44 @@
-package com.example.cactus.view
-
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.cactus.R
+import com.bumptech.glide.Glide
+import com.example.cactus.databinding.TypeItemBinding
 import com.example.cactus.model.Cactus
 
-class CactusAdapter(private  val cactusList:List<Cactus>)
-    : RecyclerView.Adapter<CactusAdapter.CactueViewHolder>()
-{
-    var onItemClick : ((Cactus) -> Unit)? = null
-    class CactueViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
-        var textView:TextView=itemView.findViewById(R.id.textView)
-        var imageView:ImageView=itemView.findViewById(R.id.imageView)
+class CactusAdapter(private var items: List<Cactus>) :
+    RecyclerView.Adapter<CactusAdapter.CactusViewHolder>() {
+
+    var onItemClick: ((Cactus) -> Unit)? = null
+
+    class CactusViewHolder(private val binding: TypeItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        var textView: TextView = binding.textView
+        var imageView: ImageView = binding.imageView
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CactueViewHolder {
-        val view =LayoutInflater.from(parent.context).inflate(R.layout.type_item,parent,false)
-        return  CactueViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CactusViewHolder {
+        val binding = TypeItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return CactusViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        return cactusList.size
-    }
+    override fun getItemCount() = items.size
 
-    override fun onBindViewHolder(holder: CactueViewHolder, position: Int) {
-        val cactus = cactusList[position]
-        Log.d("AA", "bind item $position")
-        holder.imageView.setImageResource(cactus.image)
-        holder.textView.text=cactus.name
+    override fun onBindViewHolder(holder: CactusViewHolder, position: Int) {
+        val cactus = items[position]
+        Glide.with(holder.itemView)
+            .load(cactus.image)
+            .into(holder.imageView)
+        holder.textView.text = cactus.name
 
         holder.itemView.setOnClickListener {
             onItemClick?.invoke(cactus)
         }
     }
 
+    fun setFilteredList(cactusList: List<Cactus>) {
+        this.items = cactusList
+        notifyDataSetChanged()
+    }
 }
