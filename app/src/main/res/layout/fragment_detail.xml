@@ -31,7 +31,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="280dp"
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/ic_launcher_background" />
+                    app:srcCompat="@drawable/ic_launcher_background"
+                    android:contentDescription="@string/imageDetail"/>
 
                 <!-- Back Button -->
                 <ImageView
@@ -42,7 +43,8 @@
                     android:padding="10dp"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/ic_back"
-                    android:foreground="?android:attr/selectableItemBackground"/>
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:contentDescription="@string/backButton"/>
 
             </FrameLayout>
 
@@ -54,7 +56,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/sarabun_light"
                 android:textStyle="bold"
-                android:text="TextView"
+                android:text="@string/textview"
                 android:textSize="30dp" />
             <TextView
                 android:id="@+id/detailTextView2"
@@ -62,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:fontFamily="@font/notoserifthai_regular"
-                android:text="Description"
+                android:text="@string/description"
                 android:textColor="#606060"
                 android:textSize="18dp"
                 />

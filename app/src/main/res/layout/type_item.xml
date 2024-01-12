@@ -27,7 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_launcher_background" />
+                android:src="@drawable/ic_launcher_background"
+                />
 
         </androidx.cardview.widget.CardView>
 
@@ -36,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sarabun_light"
-            android:text="text"
+            android:text="@string/text"
             android:textSize="20dp"
             android:textStyle="bold"
             android:gravity="center"
