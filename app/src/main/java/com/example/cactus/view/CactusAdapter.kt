@@ -12,8 +12,10 @@ class CactusAdapter(private var items: List<Cactus>) :
 
     var onItemClick: ((Cactus) -> Unit)? = null
 
+
     class CactusViewHolder(private val binding: TypeItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         var textView: TextView = binding.textView
         var imageView: ImageView = binding.imageView
     }
@@ -27,18 +29,25 @@ class CactusAdapter(private var items: List<Cactus>) :
 
     override fun onBindViewHolder(holder: CactusViewHolder, position: Int) {
         val cactus = items[position]
+
+        // ใช้ Glide เพื่อโหลดรูปภาพและแสดงบน ImageView
         Glide.with(holder.itemView)
             .load(cactus.image)
             .into(holder.imageView)
+
+        // กำหนดชื่อ Cactus ใน TextView
         holder.textView.text = cactus.name
 
+        // กำหนดการทำงานเมื่อคลิกที่รายการ
         holder.itemView.setOnClickListener {
             onItemClick?.invoke(cactus)
         }
     }
 
+    // อัปเดตรายการเมื่อกรองตรง search
     fun setFilteredList(cactusList: List<Cactus>) {
         this.items = cactusList
         notifyDataSetChanged()
     }
 }
+
