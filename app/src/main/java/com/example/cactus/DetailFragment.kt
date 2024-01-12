@@ -6,20 +6,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.core.net.toUri
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.cactus.databinding.FragmentDetailBinding
 import com.example.cactus.model.Cactus
+import com.example.cactus.viewmodel.DetailViewModel
 
 class DetailFragment : Fragment() {
     private lateinit var binding: FragmentDetailBinding
+    private lateinit var viewModel: DetailViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentDetailBinding.inflate(inflater, container, false)
+        viewModel = ViewModelProvider(this)[DetailViewModel::class.java]
         return binding.root
     }
 
@@ -28,6 +30,8 @@ class DetailFragment : Fragment() {
 
         val cactus: Cactus? = arguments?.getParcelable("cactus")
         cactus?.let {
+            viewModel.setCactus(cactus) //กำหนดข้อมูล cactus ให้ viewModel
+
             Glide.with(this)
                 .load(cactus.image)
                 .into(binding.detailImageView)
@@ -45,15 +49,5 @@ class DetailFragment : Fragment() {
             activity?.supportFragmentManager?.popBackStack()
         }
     }
-//    companion object {
-//        fun newInstance(cactus: Cactus): DetailFragment {
-//            val fragment = DetailFragment()
-//            val args = Bundle()
-//            args.putParcelable("cactus", cactus)
-//            fragment.arguments = args
-//            return fragment
-//        }
-//    }
-
 
 }

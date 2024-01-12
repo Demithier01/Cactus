@@ -25,12 +25,12 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp">
+                android:layout_height="280dp">
                 <ImageView
                     android:id="@+id/detailImageView"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:scaleType="fitXY"
+                    android:layout_height="280dp"
+                    android:scaleType="centerCrop"
                     app:srcCompat="@drawable/ic_launcher_background" />
 
                 <!-- Back Button -->
@@ -52,7 +52,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/prompt"
+                android:fontFamily="@font/sarabun_light"
+                android:textStyle="bold"
                 android:text="TextView"
                 android:textSize="30dp" />
             <TextView
@@ -60,10 +61,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:fontFamily="@font/prompt"
+                android:fontFamily="@font/notoserifthai_regular"
                 android:text="Description"
-                android:textColor="@color/colorGray"
-                android:textSize="18dp" />
+                android:textColor="#606060"
+                android:textSize="18dp"
+                />
 
             <TextView
                 android:id="@+id/clickLink"
@@ -71,9 +73,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|bottom"
                 android:layout_margin="10dp"
-                android:text="more.."
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20dp"
+                android:text="@string/more"
+                android:fontFamily="@font/sarabun_light"
+                android:textColor="#B7071049"
+                android:textSize="18dp"
                 android:textStyle="italic|bold" />
 
         </LinearLayout>

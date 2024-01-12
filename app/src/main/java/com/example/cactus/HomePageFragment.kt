@@ -7,24 +7,25 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cactus.databinding.FragmentHomePageBinding
-import com.example.cactus.model.Cactus
+import com.example.cactus.viewmodel.HomepageViewModel
 import java.util.Locale
 
 class HomePageFragment : Fragment() {
 
     private lateinit var binding: FragmentHomePageBinding
     private lateinit var cactusAdapter: CactusAdapter
-    private lateinit var cactusList: List<Cactus>
     private val navController by lazy { findNavController() }
-
+    private lateinit var viewModel: HomepageViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomePageBinding.inflate(inflater, container, false)
+        viewModel = ViewModelProvider(this)[HomepageViewModel::class.java]
         return binding.root
     }
 
@@ -34,8 +35,7 @@ class HomePageFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.setHasFixedSize(true)
 
-        cactusList = CactusGenerator.getItems()
-        cactusAdapter = CactusAdapter(cactusList)
+        cactusAdapter = CactusAdapter(viewModel.cactusList)
 
         cactusAdapter.onItemClick = { cactus ->
             val bundle = Bundle()
@@ -58,20 +58,11 @@ class HomePageFragment : Fragment() {
     }
 
     private fun filterList(query: String?) {
-        if (!query.isNullOrBlank()) {
-            val filterList = ArrayList<Cactus>()
-            for (i in cactusList) {
-                if (i.name.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT))) {
-                    filterList.add(i)
-                }
-            }
-            if (filterList.isEmpty()) {
-                Toast.makeText(requireContext(), "No Data found", Toast.LENGTH_SHORT).show()
-            } else {
-                cactusAdapter.setFilteredList(filterList)
-            }
+        val filteredList = viewModel.cactusList.filter { it.name.lowercase(Locale.ROOT).contains(query?.lowercase(Locale.ROOT) ?: "") }
+        if (filteredList.isEmpty()) {
+            Toast.makeText(requireContext(), "No Data found", Toast.LENGTH_SHORT).show()
         } else {
-            cactusAdapter.setFilteredList(cactusList)
+            cactusAdapter.setFilteredList(filteredList)
         }
     }
 }
