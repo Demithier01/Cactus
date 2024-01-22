@@ -37,10 +37,8 @@ class DetailFragment : Fragment() {
                     .load(cactus.image)
                     .into(binding.detailImageView)
 
-
                 binding.detailTextView.text = cactus.name
                 binding.detailTextView2.text = cactus.description
-
 
                 binding.clickLink.setOnClickListener {
                     val browserIntent = Intent(Intent.ACTION_VIEW, cactus.link.toUri())

@@ -13,10 +13,43 @@
         <action
             android:id="@+id/action_homePageFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_resultItemFragment"
+            app:destination="@id/resultItemFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_informentsFragment"
+            app:destination="@id/informentsFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.cactus.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/resultItemFragment"
+        android:name="com.example.cactus.ResultItemFragment"
+        android:label="fragment_result_item"
+        tools:layout="@layout/fragment_result_item" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/informentsFragment"
+        android:name="com.example.cactus.InformentsFragment"
+        android:label="fragment_informents"
+        tools:layout="@layout/fragment_informents" >
+        <action
+            android:id="@+id/action_informentsFragment_to_addInformentsFragment"
+            app:destination="@id/addInformentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addInformentsFragment"
+        android:name="com.example.cactus.AddInformentsFragment"
+        android:label="fragment_add_informents"
+        tools:layout="@layout/fragment_add_informents" >
+        <action
+            android:id="@+id/action_addInformentsFragment_to_informentsFragment"
+            app:destination="@id/informentsFragment" />
+    </fragment>
+
+
 </navigation>

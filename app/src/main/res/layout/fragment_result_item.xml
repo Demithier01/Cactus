@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#70A8A7A5"
+    tools:context=".ResultItemFragment">
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="top|start"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_back"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:contentDescription="@string/backButton"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/Silver">
+
+        <TextView
+            android:id="@+id/tvButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:text="TextView"
+            android:textSize="24dp" />
+    </androidx.cardview.widget.CardView>
+
+
+</FrameLayout>
