@@ -1,4 +1,4 @@
-package com.example.cactus.model
+package com.example.cactus.information
 
 data class Informents(
     val id : String? = null,

@@ -54,7 +54,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/sarabun_light"
                 android:textStyle="bold"
                 android:text="@string/textview"
                 android:textSize="30dp" />
@@ -63,7 +62,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:fontFamily="@font/notoserifthai_regular"
                 android:text="@string/description"
                 android:textColor="#606060"
                 android:textSize="18dp"
@@ -76,7 +74,6 @@
                 android:layout_gravity="end|bottom"
                 android:layout_margin="10dp"
                 android:text="@string/more"
-                android:fontFamily="@font/sarabun_light"
                 android:textColor="#B7071049"
                 android:textSize="18dp"
                 android:textStyle="italic|bold" />

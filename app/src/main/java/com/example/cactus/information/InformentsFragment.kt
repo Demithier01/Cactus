@@ -1,4 +1,4 @@
-package com.example.cactus
+package com.example.cactus.information
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,9 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cactus.R
 import com.example.cactus.databinding.FragmentInformentsBinding
-import com.example.cactus.model.Informents
-import com.example.cactus.view.InformentsAdapter
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -42,6 +41,8 @@ class InformentsFragment : Fragment() {
         }
         return binding.root
     }
+
+
     private fun fetchData() {
         firebaseRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -63,3 +64,4 @@ class InformentsFragment : Fragment() {
         })
     }
 }
+

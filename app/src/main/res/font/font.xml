@@ -3,15 +3,42 @@
 
     <font
         android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/notoserifthai_regular"/>
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="300"
+        android:font="@font/notoserifthai_light"/>
+    <font
+        android:fontStyle="normal"
         android:fontWeight="300"
         android:font="@font/sarabun_light"/>
 
     <font
         android:fontStyle="normal"
-        android:fontWeight="100"
-        android:font="@font/notoserifthai_thin"/>
+        android:fontWeight="400"
+        android:font="@font/sarabun_regular"/>
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="200"
+        android:font="@font/sarabun_extralight"/>
+
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="300"
+        android:font="@font/kanit_light"/>
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/notoserifthai_regular"/>
+        android:font="@font/kanit_regular"/>
+
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="300"
+        android:font="@font/mitr_light"/>
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/mitr_regular"/>
+
 </font-family>

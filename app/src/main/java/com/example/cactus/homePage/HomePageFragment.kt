@@ -69,6 +69,12 @@ class HomePageFragment : Fragment() {
             })
         }
 
+        binding.btnApi.setOnClickListener {
+            findNavController().navigate(R.id.action_homePageFragment_to_restApiFragment)
+        }
+
+
+
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.setHasFixedSize(true)
 

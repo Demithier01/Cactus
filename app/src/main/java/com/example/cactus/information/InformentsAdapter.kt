@@ -1,14 +1,11 @@
-package com.example.cactus.view
+package com.example.cactus.information
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.example.cactus.InformentsFragmentDirections
 import com.example.cactus.R
 import com.example.cactus.databinding.InformationItemBinding
-import com.example.cactus.model.Informents
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -21,7 +18,7 @@ class InformentsAdapter (private val informentList:ArrayList<Informents> ): Recy
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): InformentsAdapter.ViewHolder {
+    ): ViewHolder {
         return  ViewHolder(InformationItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 

@@ -1,4 +1,4 @@
-package com.example.cactus
+package com.example.cactus.information
 
 import android.net.Uri
 import android.os.Bundle
@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.cactus.databinding.FragmentAddInformentsBinding
-import com.example.cactus.model.Informents
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -45,19 +44,18 @@ class AddInformentsFragment : Fragment() {
     }
     private fun saveData() {
         val name = binding.editName.text.toString().trim()
-        val phone = binding.editDes.text.toString().trim()
+        val des = binding.editDes.text.toString().trim()
 
         if (name.isEmpty()) {
             binding.editName.error = "Enter is Name"
             return
         }
-
-        if (phone.isEmpty()) {
+        if (des.isEmpty()) {
             binding.editDes.error = "Enter is Description"
             return
         }
-
         //บันทึกข้อมูล
+
         val informentId = firebaseRef.push().key!!
         var informents : Informents
         uri?.let{
@@ -67,7 +65,7 @@ class AddInformentsFragment : Fragment() {
                         .addOnSuccessListener { url ->
                             Toast.makeText(context,"Image Success", Toast.LENGTH_SHORT).show()
                             val imgUrl = url.toString()
-                            informents = Informents(informentId,name,phone,imgUrl)
+                            informents = Informents(informentId,name,des,imgUrl)
 
                             firebaseRef.child(informentId).setValue(informents)
                                 .addOnCompleteListener {
@@ -79,8 +77,7 @@ class AddInformentsFragment : Fragment() {
                         }
                 }
         }
-
-
-
     }
 }
+
+
