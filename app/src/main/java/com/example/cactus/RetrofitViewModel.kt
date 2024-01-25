@@ -1,11 +1,12 @@
-package com.example.cactus.restApi
+package com.example.cactus
 
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.cactus.restApi.model.SpeciesItem
+import com.example.cactus.api.SpeciesService
+import com.example.cactus.model.SpeciesItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,7 +31,7 @@ class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel(
                     }
                     _speciesList.postValue(list)
                 } else {
-                    Log.e("RetrofitViewModel", "Error getting album: ${response.code()}")
+                    Log.e("RetrofitViewModel", "Error getting : ${response.code()}")
                 }
             }
 
@@ -70,7 +71,7 @@ class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel(
                         Log.e("RetrofitViewModel", "Create data Success : ${response.code()}")
                     }
                 } else {
-                    Log.e("RetrofitViewModel", "Error posting : ${response.code()}")
+                    Log.e("RetrofitViewModel", "Error Create data : ${response.code()}")
                 }
             }
 

@@ -3,39 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homePageFragment">
+    app:startDestination="@id/retrofitFragment">
 
     <fragment
-        android:id="@+id/homePageFragment"
-        android:name="com.example.cactus.homePage.HomePageFragment"
-        android:label="fragment_home_page"
-        tools:layout="@layout/fragment_home_page" >
-        <action
-            android:id="@+id/action_homePageFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
-        <action
-            android:id="@+id/action_homePageFragment_to_resultItemFragment"
-            app:destination="@id/resultItemFragment" />
-        <action
-            android:id="@+id/action_homePageFragment_to_restApiFragment"
-            app:destination="@id/restApiFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.example.cactus.detail.DetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
-    <fragment
-        android:id="@+id/resultItemFragment"
-        android:name="com.example.cactus.ResultItemFragment"
-        android:label="fragment_result_item"
-        tools:layout="@layout/fragment_result_item" >
-
-    </fragment>
-    <fragment
-        android:id="@+id/restApiFragment"
-        android:name="com.example.cactus.restApi.RetrofitFragment"
-        android:label="fragment_rest_api"
+        android:id="@+id/retrofitFragment"
+        android:name="com.example.cactus.RetrofitFragment"
+        android:label="fragment_retrofit"
         tools:layout="@layout/fragment_retrofit" />
 
 

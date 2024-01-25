@@ -1,4 +1,4 @@
-package com.example.cactus.restApi.model
+package com.example.cactus.model
 
 import com.google.gson.annotations.SerializedName
 

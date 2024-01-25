@@ -1,13 +1,3 @@
-package com.example.cactus.view
-
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.cactus.databinding.HomepageItemBinding
-import com.example.cactus.model.Cactus
 class CactusAdapter(private var items: List<Cactus>) :
     RecyclerView.Adapter<CactusAdapter.CactusViewHolder>() {
 
@@ -43,10 +33,7 @@ class CactusAdapter(private var items: List<Cactus>) :
 
     // อัปเดตรายการเมื่อกรองตรง search
     fun setFilteredList(cactusList: List<Cactus>) {
-        this.items = cactusList
+        this.items= cactusList
         notifyDataSetChanged()
     }
-
-
 }
-

@@ -1,7 +1,6 @@
-package com.example.cactus.restApi
+package com.example.cactus
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,11 +9,12 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cactus.api.RetrofitInstance
+import com.example.cactus.api.SpeciesService
 import com.example.cactus.databinding.FragmentRetrofitBinding
-import com.example.cactus.restApi.model.SpeciesItem
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.cactus.model.SpeciesItem
+import com.example.cactus.view.SpeciesAdapter
+import java.util.Locale
 
 class RetrofitFragment : Fragment() {
     private lateinit var binding: FragmentRetrofitBinding
@@ -39,17 +39,39 @@ class RetrofitFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.fetchData()
+
 //        viewModel.updateData()
 //        viewModel.createData(SpeciesItem("", ""))
 //        viewModel.deleteData("")
-//
+
+        binding.search.setOnQueryTextListener(object :androidx.appcompat.widget.SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                checkList(newText)
+                return true
+            }
+
+        })
     }
     private fun updateUI(speciesList: List<SpeciesItem>) {
         binding.rvRetrofit.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(this.context)
-            adapter = RetrofitAdapter(speciesList)
+            adapter = SpeciesAdapter(speciesList)
         }
+    }
+    private fun checkList(query: String?){
+        viewModel.speciesList.observe(viewLifecycleOwner, Observer { type ->
+            val checkedList = type.filter { it.name.lowercase(Locale.ROOT).contains(query?.lowercase(Locale.ROOT) ?: "") }
+            if (checkedList.isEmpty()) {
+                Toast.makeText(requireContext(), "No Data found", Toast.LENGTH_SHORT).show()
+            } else {
+                (binding.rvRetrofit.adapter as SpeciesAdapter).setCheckedList(checkedList)
+            }
+        })
     }
 
 
