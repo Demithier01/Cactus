@@ -1,12 +1,11 @@
 package com.example.cactus.homePage
 
-import CactusAdapter
+import com.example.cactus.view.CactusAdapter
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -40,12 +39,8 @@ class HomePageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnAddData.setOnClickListener{
-            findNavController().navigate(R.id.action_homePageFragment_to_informentsFragment)
-        }
 
         binding.btnFirebase.setOnClickListener {
-
              //ทำการเรียก API เพื่อดึงข้อมูล
             val apiService = ApiService.invoke()
             apiService.getMessage().enqueue(object : Callback<ToDo> {

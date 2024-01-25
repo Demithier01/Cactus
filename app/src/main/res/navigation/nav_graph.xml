@@ -17,9 +17,6 @@
             android:id="@+id/action_homePageFragment_to_resultItemFragment"
             app:destination="@id/resultItemFragment" />
         <action
-            android:id="@+id/action_homePageFragment_to_informentsFragment"
-            app:destination="@id/informentsFragment" />
-        <action
             android:id="@+id/action_homePageFragment_to_restApiFragment"
             app:destination="@id/restApiFragment" />
     </fragment>
@@ -34,24 +31,6 @@
         android:label="fragment_result_item"
         tools:layout="@layout/fragment_result_item" >
 
-    </fragment>
-    <fragment
-        android:id="@+id/informentsFragment"
-        android:name="com.example.cactus.information.InformentsFragment"
-        android:label="fragment_informents"
-        tools:layout="@layout/fragment_informents" >
-        <action
-            android:id="@+id/action_informentsFragment_to_addInformentsFragment"
-            app:destination="@id/addInformentsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/addInformentsFragment"
-        android:name="com.example.cactus.information.AddInformentsFragment"
-        android:label="fragment_add_informents"
-        tools:layout="@layout/fragment_add_informents" >
-        <action
-            android:id="@+id/action_addInformentsFragment_to_informentsFragment"
-            app:destination="@id/informentsFragment" />
     </fragment>
     <fragment
         android:id="@+id/restApiFragment"

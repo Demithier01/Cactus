@@ -1,18 +1,18 @@
-import android.util.Log
+package com.example.cactus.view
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.cactus.ApiService
-import com.example.cactus.databinding.TypeItemBinding
+import com.example.cactus.databinding.HomepageItemBinding
 import com.example.cactus.model.Cactus
 class CactusAdapter(private var items: List<Cactus>) :
     RecyclerView.Adapter<CactusAdapter.CactusViewHolder>() {
 
     lateinit var onItemClick: (Cactus) -> Unit
-    class CactusViewHolder(private val binding: TypeItemBinding) :
+    class CactusViewHolder(private val binding: HomepageItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         var textView: TextView = binding.textView
@@ -20,7 +20,7 @@ class CactusAdapter(private var items: List<Cactus>) :
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CactusViewHolder {
-        return  CactusViewHolder(TypeItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return  CactusViewHolder(HomepageItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
     override fun getItemCount() = items.size
 

@@ -43,19 +43,12 @@
             android:src="@drawable/gift_icon"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnAddData" />
-
-        <ImageView
-            android:id="@+id/btnAddData"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/icon_add"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
 
         <ImageView
             android:id="@+id/btnApi"

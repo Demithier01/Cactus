@@ -17,6 +17,12 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 
+//ใช้คำสั่งนี้เพื่อที่จะเปิดหน้านี้ขึ้นมา
+//โดยสร้างปุ่มเพื่อเชื่อมมาหน้านี้ก่อน
+//binding.btnAddData.setOnClickListener{
+//              findNavController().navigate(R.id.action_homePageFragment_to_informentsFragment)
+//          }
+
 class InformentsFragment : Fragment() {
     private lateinit var binding : FragmentInformentsBinding
     private lateinit var informentList: ArrayList<Informents>
@@ -64,4 +70,3 @@ class InformentsFragment : Fragment() {
         })
     }
 }
-
