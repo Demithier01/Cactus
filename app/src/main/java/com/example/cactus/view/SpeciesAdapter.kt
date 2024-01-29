@@ -3,6 +3,8 @@ package com.example.cactus.view
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.cactus.R
 import com.example.cactus.databinding.RetrofitItemBinding
 import com.example.cactus.model.SpeciesItem
 
@@ -27,6 +29,12 @@ class SpeciesAdapter(private var speciesList: List<SpeciesItem>) :
             binding?.apply {
                 tvName.text = currentItem.name
                 tvTitle.text = currentItem.title
+                Glide.with(img.context)
+                    .load(currentItem.imageUrl)
+                    .placeholder(R.drawable.ic_launcher_foreground)
+                    .error(R.drawable.ic_error)
+                    .into(img)
+
             }
         }
     }

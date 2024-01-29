@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cactus.api.RetrofitInstance
 import com.example.cactus.api.SpeciesService
@@ -33,6 +34,10 @@ class RetrofitFragment : Fragment() {
         viewModel.speciesList.observe(viewLifecycleOwner, Observer { speciesList ->
             updateUI(speciesList)
         })
+        binding.add.setOnClickListener {
+            findNavController().navigate(R.id.action_retrofitFragment_to_addDataFragment)
+        }
+
         return binding.root
     }
 
@@ -41,7 +46,10 @@ class RetrofitFragment : Fragment() {
         viewModel.fetchData()
 
 //        viewModel.updateData()
-//        viewModel.createData(SpeciesItem("", ""))
+//        viewModel.createData(SpeciesItem(
+//            "",
+//            "",
+//            "" ))
 //        viewModel.deleteData("")
 
         binding.search.setOnQueryTextListener(object :androidx.appcompat.widget.SearchView.OnQueryTextListener{
@@ -65,7 +73,8 @@ class RetrofitFragment : Fragment() {
     }
     private fun checkList(query: String?){
         viewModel.speciesList.observe(viewLifecycleOwner, Observer { type ->
-            val checkedList = type.filter { it.name.lowercase(Locale.ROOT).contains(query?.lowercase(Locale.ROOT) ?: "") }
+            val checkedList = type.filter { it.name!!.lowercase(Locale.ROOT)
+                .contains(query?.lowercase(Locale.ROOT) ?: "") }
             if (checkedList.isEmpty()) {
                 Toast.makeText(requireContext(), "No Data found", Toast.LENGTH_SHORT).show()
             } else {
