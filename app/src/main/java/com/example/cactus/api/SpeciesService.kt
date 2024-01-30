@@ -12,7 +12,6 @@ import retrofit2.http.Path
 interface SpeciesService {
     @GET("/cactus/.json")
     fun getSpecies(): Call<Map<String, SpeciesItem>>
-
     @PATCH("/cactus/{id}.json")
     fun updateSpecies(@Path("id") id: String, @Body speciesItem: SpeciesItem): Call<SpeciesItem>
 

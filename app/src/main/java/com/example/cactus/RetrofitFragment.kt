@@ -20,21 +20,32 @@ import java.util.Locale
 class RetrofitFragment : Fragment() {
     private lateinit var binding: FragmentRetrofitBinding
     private lateinit var viewModel: RetrofitViewModel
+    private lateinit var adapterSpecies : SpeciesAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentRetrofitBinding.inflate(inflater, container, false)
         // Create the Retrofit instance and the SpeciesService
         val retrofit = RetrofitInstance.getRetrofitInstance()
         val speciesService = retrofit.create(SpeciesService::class.java)
-
         // Create the ViewModel with the SpeciesServiceFactory
         val viewModelFactory = SpeciesServiceFactory(speciesService)
         viewModel = ViewModelProvider(this, viewModelFactory).get(RetrofitViewModel::class.java)
-
         viewModel.speciesList.observe(viewLifecycleOwner, Observer { speciesList ->
+            adapterSpecies = SpeciesAdapter(speciesList) {type ->
+                val bundle = Bundle()
+                bundle.putParcelable("id",type)
+                findNavController().navigate(R.id.action_retrofitFragment_to_detailFragment,bundle)
+            }
+            binding.rvRetrofit.adapter = adapterSpecies
             updateUI(speciesList)
         })
-        binding.add.setOnClickListener {
+
+        val sharedViewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(RetrofitViewModel::class.java)
+        sharedViewModel.speciesList.observe(viewLifecycleOwner, Observer { updatedSpeciesList ->
+            updateUI(updatedSpeciesList)
+        })
+
+        binding.buttonAdd.setOnClickListener {
             findNavController().navigate(R.id.action_retrofitFragment_to_addDataFragment)
         }
 
@@ -45,12 +56,6 @@ class RetrofitFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.fetchData()
 
-//        viewModel.updateData()
-//        viewModel.createData(SpeciesItem(
-//            "",
-//            "",
-//            "" ))
-//        viewModel.deleteData("")
 
         binding.search.setOnQueryTextListener(object :androidx.appcompat.widget.SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -63,28 +68,30 @@ class RetrofitFragment : Fragment() {
             }
 
         })
+
     }
     private fun updateUI(speciesList: List<SpeciesItem>) {
         binding.rvRetrofit.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(this.context)
-            adapter = SpeciesAdapter(speciesList)
+            adapter = adapterSpecies
         }
     }
-    private fun checkList(query: String?){
+    private fun checkList(query: String?) {
         viewModel.speciesList.observe(viewLifecycleOwner, Observer { type ->
-            val checkedList = type.filter { it.name!!.lowercase(Locale.ROOT)
-                .contains(query?.lowercase(Locale.ROOT) ?: "") }
+            val checkedList = type.filter { it.name!!.lowercase(Locale.ROOT).contains(query?.lowercase(Locale.ROOT) ?: "") }
             if (checkedList.isEmpty()) {
                 Toast.makeText(requireContext(), "No Data found", Toast.LENGTH_SHORT).show()
             } else {
-                (binding.rvRetrofit.adapter as SpeciesAdapter).setCheckedList(checkedList)
+                adapterSpecies.setCheckedList(checkedList)
             }
         })
     }
-
-
 }
 
-
-
+//        viewModel.updateData(SpeciesItem(null,null,null))
+//        viewModel.createData(SpeciesItem(
+//            "",
+//            "",
+//            "" ))
+//        viewModel.deleteData("")

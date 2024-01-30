@@ -11,8 +11,20 @@
         android:label="fragment_retrofit"
         tools:layout="@layout/fragment_retrofit" >
         <action
+            android:id="@+id/action_retrofitFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
             android:id="@+id/action_retrofitFragment_to_addDataFragment"
             app:destination="@id/addDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.cactus.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_retrofitFragment"
+            app:destination="@id/retrofitFragment" />
     </fragment>
     <fragment
         android:id="@+id/addDataFragment"

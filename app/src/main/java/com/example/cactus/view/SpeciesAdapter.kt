@@ -8,15 +8,25 @@ import com.example.cactus.R
 import com.example.cactus.databinding.RetrofitItemBinding
 import com.example.cactus.model.SpeciesItem
 
-class SpeciesAdapter(private var speciesList: List<SpeciesItem>) :
+class SpeciesAdapter(private var speciesList: List<SpeciesItem>,private val onClickItem :(SpeciesItem) -> Unit) :
     RecyclerView.Adapter<SpeciesAdapter.SpeciesViewHolder>() {
     private var binding: RetrofitItemBinding? = null
-
-    class SpeciesViewHolder(private val binding: RetrofitItemBinding) :
+   inner class SpeciesViewHolder(private val binding: RetrofitItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        var tvName = binding.textName
-        var tvTitle = binding.textTitle
-    }
+        fun bind(currentItem:SpeciesItem){
+          binding.textName.text = currentItem.name
+//            binding.textTitle.text = currentItem.title
+//            Log.d("ABC","${position}-  ${currentItem.imageUrl}")
+            Glide.with(itemView.context)
+                .load(currentItem.imageUrl)
+                .placeholder(R.drawable.image)
+                .error(R.drawable.ic_img_error)
+                .into(binding.img)
+            itemView.setOnClickListener{
+                        onClickItem.invoke(currentItem)
+            }
+        }
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpeciesViewHolder {
         binding = RetrofitItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -25,26 +35,14 @@ class SpeciesAdapter(private var speciesList: List<SpeciesItem>) :
 
     override fun onBindViewHolder(holder: SpeciesViewHolder, position: Int) {
         val currentItem = speciesList[position]
-        holder.apply {
-            binding?.apply {
-                tvName.text = currentItem.name
-                tvTitle.text = currentItem.title
-                Glide.with(img.context)
-                    .load(currentItem.imageUrl)
-                    .placeholder(R.drawable.ic_launcher_foreground)
-                    .error(R.drawable.ic_error)
-                    .into(img)
+        holder.bind(currentItem)
 
-            }
-        }
     }
     override fun getItemCount() = speciesList.size
-
     //update list search
     fun setCheckedList(checkedList: List<SpeciesItem>) {
         this.speciesList = checkedList
         notifyDataSetChanged()
     }
-
-
 }
+

@@ -66,7 +66,6 @@ class AddInformentsFragment : Fragment() {
                             Toast.makeText(context,"Image Success", Toast.LENGTH_SHORT).show()
                             val imgUrl = url.toString()
                             informents = Informents(informentId,name,des,imgUrl)
-
                             firebaseRef.child(informentId).setValue(informents)
                                 .addOnCompleteListener {
                                     Toast.makeText(context, "Data stored Success!!", Toast.LENGTH_SHORT).show()

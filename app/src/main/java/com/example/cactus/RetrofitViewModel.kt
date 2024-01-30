@@ -10,6 +10,7 @@ import com.example.cactus.model.SpeciesItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.Locale
 
 class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel() {
 
@@ -34,28 +35,7 @@ class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel(
                     Log.e("RetrofitViewModel", "Error getting : ${response.code()}")
                 }
             }
-
             override fun onFailure(call: Call<Map<String, SpeciesItem>>, t: Throwable) {
-                handleFailure(t)
-            }
-        })
-    }
-    //PATCH Data
-    fun updateData(speciesItem: SpeciesItem) {
-        val updateCall = speciesService.updateSpecies(" ", speciesItem)
-        updateCall.enqueue(object : Callback<SpeciesItem> {
-            override fun onResponse(call: Call<SpeciesItem>, response: Response<SpeciesItem>) {
-                if (response.isSuccessful) {
-                    val updatedSpecies = response.body()
-                    if (updatedSpecies != null) {
-                        Log.e("RetrofitViewModel", "Update Success!!: ${response.code()}")
-                    }
-                } else {
-                    Log.e("RetrofitViewModel", "Error updating : ${response.code()}")
-                }
-            }
-
-            override fun onFailure(call: Call<SpeciesItem>, t: Throwable) {
                 handleFailure(t)
             }
         })
@@ -74,35 +54,56 @@ class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel(
                     Log.e("RetrofitViewModel", "Error Create data : ${response.code()}")
                 }
             }
-
             override fun onFailure(call: Call<SpeciesItem>, t: Throwable) {
                 handleFailure(t)
             }
         })
     }
-    //DELETE Data
-    fun deleteData(id: String) {
-        val deleteCall = speciesService.deleteSpecies(id)
-        deleteCall.enqueue(object : Callback<SpeciesItem> {
-            override fun onResponse(call: Call<SpeciesItem>, response: Response<SpeciesItem>) {
-                if (response.isSuccessful) {
-                    val deleteItem = response.body()
-                    if (deleteItem != null) {
-                        Log.e("RetrofitViewModel", "Delete Success!!: ${response.code()}")
-                    }
-                } else {
-                    Log.e("RetrofitViewModel", "Error deleting : ${response.code()}")
-                }
-            }
-
-            override fun onFailure(call: Call<SpeciesItem>, t: Throwable) {
-                handleFailure(t)
-            }
-        })
-    }
-
     private fun handleFailure(t: Throwable) {
         val failureMessage = "Failure: ${t.message}"
         Log.e("RetrofitViewModel", failureMessage)
     }
 }
+
+
+//DELETE Data
+//fun deleteData(id: String) {
+//    val deleteCall = speciesService.deleteSpecies(id)
+//    deleteCall.enqueue(object : Callback<SpeciesItem> {
+//        override fun onResponse(call: Call<SpeciesItem>, response: Response<SpeciesItem>) {
+//            if (response.isSuccessful) {
+//                val deleteItem = response.body()
+//                if (deleteItem != null) {
+//                    Log.e("RetrofitViewModel", "Delete Success!!: ${response.code()}")
+//                }
+//            } else {
+//                Log.e("RetrofitViewModel", "Error deleting : ${response.code()}")
+//            }
+//        }
+//
+//        override fun onFailure(call: Call<SpeciesItem>, t: Throwable) {
+//            handleFailure(t)
+//        }
+//    })
+//}
+
+//PATCH Data
+//fun updateData(speciesItem: SpeciesItem) {
+//    val updateCall = speciesService.updateSpecies("", speciesItem)
+//    updateCall.enqueue(object : Callback<SpeciesItem> {
+//        override fun onResponse(call: Call<SpeciesItem>, response: Response<SpeciesItem>) {
+//            if (response.isSuccessful) {
+//                val updatedSpecies = response.body()
+//                if (updatedSpecies != null) {
+//                    Log.e("RetrofitViewModel", "Update Success!!: ${response.code()}")
+//                }
+//            } else {
+//                Log.e("RetrofitViewModel", "Error updating : ${response.code()}")
+//            }
+//        }
+//
+//        override fun onFailure(call: Call<SpeciesItem>, t: Throwable) {
+//            handleFailure(t)
+//        }
+//    })
+//}
