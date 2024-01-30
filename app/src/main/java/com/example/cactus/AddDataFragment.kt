@@ -24,8 +24,7 @@ class AddDataFragment : Fragment() {
 
         val speciesService = RetrofitInstance.getRetrofitInstance().create(SpeciesService::class.java)
         val viewModelFactory = SpeciesServiceFactory(speciesService)
-//        viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(RetrofitViewModel::class.java)
-        val sharedViewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(RetrofitViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(RetrofitViewModel::class.java)
 
         binding.btnAdd.setOnClickListener {
             val name = binding.addName.text.toString()
@@ -34,7 +33,7 @@ class AddDataFragment : Fragment() {
 
             if (name.isNotEmpty() && title.isNotEmpty() && imageUrl.isNotEmpty()) {
                 val newSpeciesItem = SpeciesItem(name, title, imageUrl)
-                sharedViewModel.createData(newSpeciesItem)
+                viewModel.createData(newSpeciesItem)
 
                 // Navigate back to RetrofitFragment
                 findNavController().popBackStack()

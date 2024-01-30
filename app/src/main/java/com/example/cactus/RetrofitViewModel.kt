@@ -1,7 +1,6 @@
 package com.example.cactus
 
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,7 +9,6 @@ import com.example.cactus.model.SpeciesItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.Locale
 
 class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel() {
 
