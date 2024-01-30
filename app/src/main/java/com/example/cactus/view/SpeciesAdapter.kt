@@ -14,7 +14,7 @@ class SpeciesAdapter(private var speciesList: List<SpeciesItem>,private val onCl
    inner class SpeciesViewHolder(private val binding: RetrofitItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(currentItem:SpeciesItem){
-          binding.textName.text = currentItem.name
+            binding.textName.text = currentItem.name
 //            binding.textTitle.text = currentItem.title
 //            Log.d("ABC","${position}-  ${currentItem.imageUrl}")
             Glide.with(itemView.context)
