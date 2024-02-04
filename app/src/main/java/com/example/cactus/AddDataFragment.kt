@@ -27,12 +27,13 @@ class AddDataFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(RetrofitViewModel::class.java)
 
         binding.btnAdd.setOnClickListener {
+            val id = binding.addId.text.toString()
             val name = binding.addName.text.toString()
             val title = binding.addTitle.text.toString()
             val imageUrl = binding.addUrlImg.text.toString()
 
-            if (name.isNotEmpty() && title.isNotEmpty() && imageUrl.isNotEmpty()) {
-                val newSpeciesItem = SpeciesItem(name, title, imageUrl)
+            if ( id.isNotEmpty() && name.isNotEmpty() && title.isNotEmpty() && imageUrl.isNotEmpty()) {
+                val newSpeciesItem = SpeciesItem(id,name, title, imageUrl)
                 viewModel.createData(newSpeciesItem)
 
                 // Navigate back to RetrofitFragment

@@ -36,7 +36,7 @@ class DetailFragment : Fragment() {
             detailName.text = speciesItem.name
             detailTitle.text = speciesItem.title
             Glide.with(detailImg.context)
-                .load(speciesItem.imageUrl)
+                .load(speciesItem.image)
                 .placeholder(R.drawable.image)
                 .error(R.drawable.ic_img_error)
                 .into(detailImg)

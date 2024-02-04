@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_retrofitFragment_to_addDataFragment"
             app:destination="@id/addDataFragment" />
+        <action
+            android:id="@+id/action_retrofitFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -31,6 +34,11 @@
         android:name="com.example.cactus.AddDataFragment"
         android:label="fragment_add_data"
         tools:layout="@layout/fragment_add_data" />
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.cactus.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" />
 
 
 </navigation>

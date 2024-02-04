@@ -8,16 +8,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/addId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:hint="Id"
+            android:backgroundTint="@color/colorDarkOliveGreen"/>
+
         <EditText
             android:id="@+id/add_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name"
-            android:backgroundTint="@color/colorDarkOliveGreen"
             android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"/>
+            android:layout_marginEnd="40dp"
+            android:backgroundTint="@color/colorDarkOliveGreen"
+            android:hint="Name" />
 
         <EditText
             android:id="@+id/add_title"
@@ -28,22 +38,24 @@
             android:layout_marginEnd="40dp"
             android:backgroundTint="@color/colorDarkOliveGreen"
             android:hint="Title" />
+
         <EditText
             android:id="@+id/add_urlImg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Url_image"
-            android:backgroundTint="@color/colorDarkOliveGreen"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"/>
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:backgroundTint="@color/colorDarkOliveGreen"
+            android:hint="Url_image" />
+
         <Button
             android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="40dp"
+            android:text="Add" />
 
 
     </LinearLayout>
