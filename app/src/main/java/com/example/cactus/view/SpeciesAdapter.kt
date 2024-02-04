@@ -1,26 +1,22 @@
 package com.example.cactus.view
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.cactus.R
 import com.example.cactus.RetrofitViewModel
 import com.example.cactus.databinding.RetrofitItemBinding
 import com.example.cactus.model.SpeciesItem
-import com.google.gson.JsonDeserializer
-import com.google.gson.JsonSerializer
-import java.util.Date
 
 class SpeciesAdapter(private var speciesList: List<SpeciesItem>,
-                     private val onClickItem :(SpeciesItem) -> Unit,
-                     private val onEditItem: (SpeciesItem) -> Unit
+                     private val onClickItem:(SpeciesItem) -> Unit,
+                     private val onEditItem: (SpeciesItem) -> Unit,
+                     private val onDeleteItem: (SpeciesItem) -> Unit,
 ):
     RecyclerView.Adapter<SpeciesAdapter.SpeciesViewHolder>() {
     private lateinit var binding: RetrofitItemBinding
-
-
    inner class SpeciesViewHolder(private val binding: RetrofitItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(currentItem:SpeciesItem){
@@ -37,9 +33,10 @@ class SpeciesAdapter(private var speciesList: List<SpeciesItem>,
             }
             binding.btnEdit.setOnClickListener {
                 onEditItem.invoke(currentItem)
-
             }
-
+            binding.btnDelete.setOnClickListener {
+                onDeleteItem.invoke(currentItem)
+            }
         }
         }
 
@@ -59,6 +56,5 @@ class SpeciesAdapter(private var speciesList: List<SpeciesItem>,
         this.speciesList = checkedList
         notifyDataSetChanged()
     }
-
 }
 

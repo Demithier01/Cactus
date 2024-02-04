@@ -13,7 +13,7 @@ interface SpeciesService {
     @GET("/cactus.json")
     fun getSpecies(): Call<Map<String,SpeciesItem>>
     @PUT("/cactus/{id}.json")
-    fun updateSpecies(@Path("id") id: String, @Body speciesItem: SpeciesItem): Call<SpeciesItem>
+    fun updateSpecies(@Path("id") id: String?, @Body speciesItem: SpeciesItem): Call<SpeciesItem>
 
     @POST("/cactus.json")
     fun createSpecies(@Body speciesItem: SpeciesItem): Call<SpeciesItem>

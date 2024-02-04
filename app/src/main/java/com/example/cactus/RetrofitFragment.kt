@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -29,20 +30,35 @@ class RetrofitFragment : Fragment() {
         val speciesService = retrofit.create(SpeciesService::class.java)
         // Create the ViewModel with the SpeciesServiceFactory
         val viewModelFactory = SpeciesServiceFactory(speciesService)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(RetrofitViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(RetrofitViewModel::class.java)
         viewModel.speciesList.observe(viewLifecycleOwner, Observer { speciesList ->
-            adapterSpecies = SpeciesAdapter(speciesList) {type ->
+            adapterSpecies = SpeciesAdapter(speciesList,
+                {type ->
                 val bundle = Bundle()
                 bundle.putParcelable("id",type)
                 findNavController().navigate(R.id.action_retrofitFragment_to_detailFragment,bundle)
-            }
+            },
+                { type ->
+                    val bundle = Bundle()
+                    bundle.putParcelable("id", type)
+                    findNavController().navigate(
+                        R.id.action_retrofitFragment_to_updateFragment,bundle)
+                },
+                { type ->
+                    viewModel.deleteItem(type) {sucess ->
+                        if (sucess){
+
+                        }else{
+
+                        }
+                    }
+                },
+                viewModel,
+                requireContext()
+            )
+
             binding.rvRetrofit.adapter = adapterSpecies
             updateUI(speciesList)
-        })
-
-        val sharedViewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(RetrofitViewModel::class.java)
-        sharedViewModel.speciesList.observe(viewLifecycleOwner, Observer { updatedSpeciesList ->
-            updateUI(updatedSpeciesList)
         })
 
         binding.buttonAdd.setOnClickListener {
@@ -51,6 +67,7 @@ class RetrofitFragment : Fragment() {
 
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -61,14 +78,11 @@ class RetrofitFragment : Fragment() {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
-
             override fun onQueryTextChange(newText: String?): Boolean {
                 checkList(newText)
                 return true
             }
-
         })
-
     }
     private fun updateUI(speciesList: List<SpeciesItem>) {
         binding.rvRetrofit.apply {
