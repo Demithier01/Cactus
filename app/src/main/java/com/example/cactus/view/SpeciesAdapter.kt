@@ -2,35 +2,50 @@ package com.example.cactus.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.cactus.R
+import com.example.cactus.RetrofitViewModel
 import com.example.cactus.databinding.RetrofitItemBinding
 import com.example.cactus.model.SpeciesItem
+import com.google.gson.JsonDeserializer
+import com.google.gson.JsonSerializer
+import java.util.Date
 
-class SpeciesAdapter(private var speciesList: List<SpeciesItem>,private val onClickItem :(SpeciesItem) -> Unit) :
+class SpeciesAdapter(private var speciesList: List<SpeciesItem>,
+                     private val onClickItem :(SpeciesItem) -> Unit,
+                     private val onEditItem: (SpeciesItem) -> Unit
+):
     RecyclerView.Adapter<SpeciesAdapter.SpeciesViewHolder>() {
-    private var binding: RetrofitItemBinding? = null
+    private lateinit var binding: RetrofitItemBinding
+
+
    inner class SpeciesViewHolder(private val binding: RetrofitItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(currentItem:SpeciesItem){
             binding.textName.text = currentItem.name
-//            binding.textTitle.text = currentItem.title
+            binding.textID.text = currentItem.id
 //            Log.d("ABC","${position}-  ${currentItem.imageUrl}")
             Glide.with(itemView.context)
-                .load(currentItem.imageUrl)
+                .load(currentItem.image)
                 .placeholder(R.drawable.image)
                 .error(R.drawable.ic_img_error)
                 .into(binding.img)
             itemView.setOnClickListener{
-                        onClickItem.invoke(currentItem)
+                onClickItem.invoke(currentItem)
             }
+            binding.btnEdit.setOnClickListener {
+                onEditItem.invoke(currentItem)
+
+            }
+
         }
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpeciesViewHolder {
         binding = RetrofitItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return SpeciesViewHolder(binding!!)
+        return SpeciesViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: SpeciesViewHolder, position: Int) {
@@ -44,5 +59,6 @@ class SpeciesAdapter(private var speciesList: List<SpeciesItem>,private val onCl
         this.speciesList = checkedList
         notifyDataSetChanged()
     }
+
 }
 
