@@ -14,9 +14,13 @@ class SpeciesAdapter(private var speciesList: List<SpeciesItem>,
                      private val onClickItem:(SpeciesItem) -> Unit,
                      private val onEditItem: (SpeciesItem) -> Unit,
                      private val onDeleteItem: (SpeciesItem) -> Unit,
+                     private val viewModel: RetrofitViewModel,
+                     private val requireContext: Context
 ):
     RecyclerView.Adapter<SpeciesAdapter.SpeciesViewHolder>() {
     private lateinit var binding: RetrofitItemBinding
+
+
    inner class SpeciesViewHolder(private val binding: RetrofitItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(currentItem:SpeciesItem){
@@ -38,6 +42,7 @@ class SpeciesAdapter(private var speciesList: List<SpeciesItem>,
                 onDeleteItem.invoke(currentItem)
             }
         }
+
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpeciesViewHolder {
