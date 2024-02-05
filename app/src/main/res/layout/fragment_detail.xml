@@ -37,18 +37,19 @@
                 android:textStyle="bold" />
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
+                android:layout_width="330dp"
                 android:layout_height="280dp"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="4dp"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center">
 
                 <ImageView
                     android:id="@+id/detail_img"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitXY"
                     android:src="@drawable/ic_launcher_background" />
             </androidx.cardview.widget.CardView>
 
@@ -57,11 +58,10 @@
                 android:id="@+id/detail_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/mitr_light"
                 android:text="@string/description"
-                android:textSize="16dp"
-                android:textStyle="bold" />
+                android:textSize="16dp" />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

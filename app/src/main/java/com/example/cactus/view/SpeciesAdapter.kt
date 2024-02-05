@@ -3,12 +3,14 @@ package com.example.cactus.view
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.cactus.R
 import com.example.cactus.RetrofitViewModel
 import com.example.cactus.databinding.RetrofitItemBinding
 import com.example.cactus.model.SpeciesItem
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class SpeciesAdapter(private var speciesList: List<SpeciesItem>,
                      private val onClickItem:(SpeciesItem) -> Unit,
@@ -39,9 +41,26 @@ class SpeciesAdapter(private var speciesList: List<SpeciesItem>,
                 onEditItem.invoke(currentItem)
             }
             binding.btnDelete.setOnClickListener {
-                onDeleteItem.invoke(currentItem)
+                showDeleteConfirmationDialog(currentItem)
             }
         }
+       private fun showDeleteConfirmationDialog(speciesItem: SpeciesItem) {
+           val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext)
+           alertDialogBuilder.setTitle("Confirm delete")
+           alertDialogBuilder.setMessage("Are you sure you want to delete this ${speciesItem.name}?")
+
+           alertDialogBuilder.setPositiveButton("Delete") { _, _ ->
+               // User clicked Yes, proceed with deletion
+               onDeleteItem.invoke(speciesItem)
+           }
+
+           alertDialogBuilder.setNegativeButton("Cancel") { _, _ ->
+               // User clicked No, do nothing
+           }
+
+           val alertDialog = alertDialogBuilder.create()
+           alertDialog.show()
+       }
 
         }
 
