@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".UpdateFragment">
+    tools:context=".UpdateFragment"
+    android:background="#25B7D298">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvEdit"
@@ -12,76 +13,101 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="10dp"
             app:cardElevation="4dp"
-            android:layout_margin="20dp">
+            android:layout_margin="20dp"
+            android:layout_gravity="center">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="20dp"
+                android:layout_margin="10dp"
                 android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/mitr_regular"
+                    android:text="Form Update Data"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/mitr_regular"
+                    android:text="Name: "
+                    android:textSize="14dp"/>
+
+                <EditText
+                    android:id="@+id/editName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_update"
+                    android:padding="8dp"
+                    android:fontFamily="@font/sarabun_light"
+                    android:hint="editName"
+                    android:textColor="@color/colorGray"
+                    android:textStyle="bold"/>
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
-                        android:text="Name: "
-                        android:fontFamily="@font/mitr_regular"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/mitr_regular"
+                    android:text="Title: "
+                    android:textSize="14dp" />
 
-                    <EditText
-                        android:id="@+id/editName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="editName"
-                        android:fontFamily="@font/mitr_light"
-                        android:textSize="14dp"
-                        android:textColor="@color/colorGray"/>
+                <EditText
+                    android:id="@+id/editTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_update"
+                    android:padding="8dp"
+                    android:fontFamily="@font/sarabun_light"
+                    android:hint="editTitle"
+                    android:textColor="@color/colorGray"
+                    android:textStyle="bold" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/mitr_regular"
+                    android:text="URL Image: "
+                    android:textSize="14dp" />
 
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
-                        android:text="Title: "
-                        android:fontFamily="@font/mitr_regular"/>
-
-                    <EditText
-                        android:id="@+id/editTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="editTitle"
-                        android:fontFamily="@font/mitr_light"
-                        android:textSize="14dp"
-                        android:textColor="@color/colorGray"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
-                        android:text="URL Image: "
-                        android:fontFamily="@font/mitr_regular"/>
-                    <EditText
-                        android:id="@+id/editImage"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="editImage"
-                        android:fontFamily="@font/mitr_light"
-                        android:textSize="14dp"
-                        android:textColor="@color/colorGray"/>
+                <EditText
+                    android:id="@+id/editImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_update"
+                    android:padding="8dp"
+                    android:fontFamily="@font/sarabun_light"
+                    android:hint="editImage"
+                    android:textColor="@color/colorGray"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/btnUp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:gravity="center"
-                    android:text="Update"
+                    android:layout_margin="20dp"
                     android:fontFamily="@font/mitr_regular"
-                    android:textStyle="bold"/>
+                    android:text="Update"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/Silver"
+                    android:fontFamily="@font/mitr_regular"
+                    android:text="Back" />
 
             </LinearLayout>
 

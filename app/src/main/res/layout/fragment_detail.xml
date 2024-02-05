@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".DetailFragment"
-    android:id="@+id/detail_container">
+    android:id="@+id/detail_container"
+    android:background="#1A87CEFA">
 <ImageView
     android:id="@+id/btn_back"
     android:layout_width="wrap_content"
@@ -33,7 +34,7 @@
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/mitr_regular"
                 android:text="name"
-                android:textSize="32dp"
+                android:textSize="24dp"
                 android:textStyle="bold" />
 
             <androidx.cardview.widget.CardView
@@ -53,15 +54,15 @@
                     android:src="@drawable/ic_launcher_background" />
             </androidx.cardview.widget.CardView>
 
-
             <TextView
                 android:id="@+id/detail_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/mitr_light"
+                android:padding="8dp"
+                android:fontFamily="@font/sarabun_regular"
                 android:text="@string/description"
-                android:textSize="16dp" />
+                android:textSize="18dp" />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

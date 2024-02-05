@@ -42,6 +42,10 @@ class AddDataFragment : Fragment() {
                 Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
             }
         }
+
+        binding.btnBack.setOnClickListener {
+            activity?.supportFragmentManager?.popBackStack()
+        }
         return binding.root
     }
 }
