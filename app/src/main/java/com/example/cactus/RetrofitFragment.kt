@@ -47,9 +47,9 @@ class RetrofitFragment : Fragment() {
                 { type ->
                     viewModel.deleteItem(type) {sucess ->
                         if (sucess){
-
+                            Toast.makeText(requireContext(), "Deleted successfully", Toast.LENGTH_SHORT).show()
                         }else{
-
+                            Toast.makeText(requireContext(), "Failed to delete", Toast.LENGTH_SHORT).show()
                         }
                     }
                 },
