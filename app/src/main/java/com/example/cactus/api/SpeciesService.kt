@@ -15,8 +15,8 @@ interface SpeciesService {
     @PUT("/cactus/{id}.json")
     fun updateSpecies(@Path("id") id: String?, @Body speciesItem: SpeciesItem): Call<SpeciesItem>
 
-    @POST("/cactus.json")
-    fun createSpecies(@Body speciesItem: SpeciesItem): Call<SpeciesItem>
+    @PUT("/cactus/{id}.json")
+    fun createSpecies(@Path("id") id : String,@Body speciesItem: SpeciesItem): Call<SpeciesItem>
 
     @DELETE("/cactus/{id}.json")
     fun deleteSpecies(@Path("id")id: String): Call<SpeciesItem>

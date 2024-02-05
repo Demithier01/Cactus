@@ -38,7 +38,6 @@ class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel(
                     _speciesList.postValue(list)
                 } else {
                     Log.e("RetrofitViewModel", "Error getting : ${response.code()}")
-
                 }
             }
             override fun onFailure(call: Call<Map<String, SpeciesItem>>, t: Throwable) {
@@ -46,9 +45,11 @@ class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel(
             }
         })
     }
-    //POST Data
+
     fun createData(speciesItem: SpeciesItem) {
-        val postCall = speciesService.createSpecies(speciesItem)
+        val id = speciesItem.id
+        if (id != null) {
+        val postCall = speciesService.createSpecies(id,speciesItem)
         postCall.enqueue(object : Callback<SpeciesItem> {
             override fun onResponse(call: Call<SpeciesItem>, response: Response<SpeciesItem>) {
                 if (response.isSuccessful) {
@@ -65,8 +66,8 @@ class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel(
                 handleFailure(t)
             }
         })
-    }
-    //UPDATE Data
+    }}
+
     private fun updateData(updatedSpecies: SpeciesItem) {
         val updateCall = speciesService.updateSpecies(updatedSpecies.id, updatedSpecies)
         updateCall.enqueue(object : Callback<SpeciesItem> {
@@ -89,7 +90,6 @@ class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel(
         val updatedSpecies = speciesItem.copy(id = id)
         updateData(updatedSpecies)
     }
-
     //delete
     fun deleteItem(speciesItem: SpeciesItem, onResult: (Boolean) -> Unit) {
         val id = speciesItem.id
