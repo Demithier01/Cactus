@@ -1,8 +1,8 @@
-package com.example.cactus
+package com.example.cactus.api
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.cactus.api.SpeciesService
+import com.example.cactus.retrofit.RetrofitViewModel
 
 class SpeciesServiceFactory(private val speciesService: SpeciesService) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

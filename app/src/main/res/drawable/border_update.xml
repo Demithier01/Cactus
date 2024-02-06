@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
-<!--    <solid android:color="@color/colorWhite"/>    &lt;!&ndash; พื้นหลัง &ndash;&gt;-->
+    <solid android:color="@color/colorWhite"/>    <!-- พื้นหลัง -->
     <corners android:radius="8dp"/> <!-- องศาของขอบ -->
     <stroke android:color="@color/Silver"
         android:width="2dp"/> <!-- สีขอบ และ ขนาดของขอบ -->

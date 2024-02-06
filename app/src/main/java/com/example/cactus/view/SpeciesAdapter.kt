@@ -3,11 +3,10 @@ package com.example.cactus.view
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.cactus.R
-import com.example.cactus.RetrofitViewModel
+import com.example.cactus.retrofit.RetrofitViewModel
 import com.example.cactus.databinding.RetrofitItemBinding
 import com.example.cactus.model.SpeciesItem
 import com.google.android.material.dialog.MaterialAlertDialogBuilder

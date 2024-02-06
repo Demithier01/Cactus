@@ -3,17 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AddDataFragment"
-    android:background="@color/colorMintCream">
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="4dp"
-        android:layout_margin="10dp"
-        android:layout_gravity="center">
+    android:background="#FAFAFA">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,7 +38,8 @@
                 android:background="@drawable/border_update"
                 android:padding="10dp"
                 android:fontFamily="@font/sarabun_regular"
-                android:hint="Enter Id"/>
+                android:hint="Enter Id"
+                android:inputType="number"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -110,6 +102,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="40dp"
                 android:fontFamily="@font/mitr_regular"
+                android:backgroundTint="@color/colorPrimary"
                 android:text="Save" />
             <Button
                 android:id="@+id/btnBack"
@@ -121,9 +114,6 @@
                 android:text="Back"
                 android:backgroundTint="@color/Silver"/>
 
-
         </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
 
 </FrameLayout>

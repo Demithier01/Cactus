@@ -10,8 +10,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.cactus.api.RetrofitInstance
 import com.example.cactus.api.SpeciesService
+import com.example.cactus.api.SpeciesServiceFactory
 import com.example.cactus.databinding.FragmentUpdateBinding
 import com.example.cactus.model.SpeciesItem
+import com.example.cactus.retrofit.RetrofitViewModel
 
 class UpdateFragment : Fragment() {
     private lateinit var binding: FragmentUpdateBinding

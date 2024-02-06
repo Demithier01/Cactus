@@ -5,22 +5,14 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UpdateFragment"
-    android:background="#25B7D298">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            android:layout_margin="20dp"
-            android:layout_gravity="center">
+    android:background="#FAFAFA">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
+                android:padding="10dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -96,6 +88,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
+                    android:backgroundTint="@color/colorPrimary"
                     android:fontFamily="@font/mitr_regular"
                     android:text="Update"
                     android:textStyle="bold" />
@@ -110,13 +103,5 @@
                     android:text="Back" />
 
             </LinearLayout>
-
-
-
-        </androidx.cardview.widget.CardView>
-
-
-
-
 
 </FrameLayout>
