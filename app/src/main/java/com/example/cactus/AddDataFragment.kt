@@ -36,9 +36,8 @@ class AddDataFragment : Fragment() {
 
             if ( id.isNotEmpty() && name.isNotEmpty() && title.isNotEmpty() && imageUrl.isNotEmpty()) {
                 val newSpeciesItem = SpeciesItem(id,name, title, imageUrl)
-                viewModel.createData(newSpeciesItem)
+                viewModel.createItem(newSpeciesItem)
 
-                // Navigate back to RetrofitFragment
                 findNavController().popBackStack()
             } else {
                 Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()

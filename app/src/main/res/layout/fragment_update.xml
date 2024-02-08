@@ -7,101 +7,97 @@
     tools:context=".UpdateFragment"
     android:background="#FAFAFA">
 
-            <LinearLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Form Update Data"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Name: "
+                android:textSize="14dp"/>
+
+            <EditText
+                android:id="@+id/editName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="10dp"
-                android:padding="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/mitr_regular"
-                    android:text="Form Update Data"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:fontFamily="@font/mitr_regular"
-                    android:text="Name: "
-                    android:textSize="14dp"/>
-
-                <EditText
-                    android:id="@+id/editName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_update"
-                    android:padding="8dp"
-                    android:fontFamily="@font/sarabun_light"
-                    android:hint="editName"
-                    android:textColor="@color/colorGray"
-                    android:textStyle="bold"/>
+                android:background="@drawable/border_update"
+                android:padding="8dp"
+                android:hint="editName"
+                android:textColor="@color/colorGray"
+                android:textStyle="bold"/>
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:fontFamily="@font/mitr_regular"
-                    android:text="Title: "
-                    android:textSize="14dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Title: "
+                android:textSize="14dp" />
 
-                <EditText
-                    android:id="@+id/editTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_update"
-                    android:padding="8dp"
-                    android:fontFamily="@font/sarabun_light"
-                    android:hint="editTitle"
-                    android:textColor="@color/colorGray"
-                    android:textStyle="bold" />
+            <EditText
+                android:id="@+id/editTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_update"
+                android:padding="8dp"
+                android:hint="editTitle"
+                android:textColor="@color/colorGray"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:fontFamily="@font/mitr_regular"
-                    android:text="URL Image: "
-                    android:textSize="14dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="URL Image: "
+                android:textSize="14dp" />
 
-                <EditText
-                    android:id="@+id/editImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_update"
-                    android:padding="8dp"
-                    android:fontFamily="@font/sarabun_light"
-                    android:hint="editImage"
-                    android:textColor="@color/colorGray"
-                    android:textStyle="bold" />
+            <EditText
+                android:id="@+id/editImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_update"
+                android:padding="8dp"
+                android:hint="editImage"
+                android:textColor="@color/colorGray"
+                android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/btnUp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="20dp"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:fontFamily="@font/mitr_regular"
-                    android:text="Update"
-                    android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="Update"
+                android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/btnBack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:backgroundTint="@color/Silver"
-                    android:fontFamily="@font/mitr_regular"
-                    android:text="Back" />
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/Silver"
+                android:text="Back" />
 
-            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>

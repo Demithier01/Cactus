@@ -8,9 +8,8 @@
         <item name="colorAccent">@color/Silver</item>
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:fontFamily">@font/segoe_ui</item>
     </style>
-
-
     <style name="Theme.CaCtus" parent="Base.Theme.CaCtus" />
 
 

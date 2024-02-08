@@ -5,115 +5,112 @@
     android:layout_height="match_parent"
     tools:context=".AddDataFragment"
     android:background="#FAFAFA">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:text="Creat Data"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID: "
+            android:textSize="14dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:id="@+id/addId"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/border_update"
+            android:padding="10dp"
+            android:hint="Enter Id"
+            android:inputType="number"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center"
-                android:text="Creat Data"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:fontFamily="@font/mitr_regular"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name: "
+            android:textSize="14dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:id="@+id/add_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/border_update"
+            android:padding="10dp"
+            android:hint="Enter Name" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ID: "
-                android:textSize="14dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"/>
-            <EditText
-                android:id="@+id/addId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:background="@drawable/border_update"
-                android:padding="10dp"
-                android:fontFamily="@font/sarabun_regular"
-                android:hint="Enter Id"
-                android:inputType="number"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title: "
+            android:textSize="14dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:id="@+id/add_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/border_update"
+            android:padding="10dp"
+            android:hint="Enter Title" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Name: "
-                android:textSize="14dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"/>
-            <EditText
-                android:id="@+id/add_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:background="@drawable/border_update"
-                android:padding="10dp"
-                android:fontFamily="@font/sarabun_regular"
-                android:hint="Enter Name" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="URL Iamge: "
+            android:textSize="14dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:id="@+id/add_urlImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/border_update"
+            android:padding="10dp"
+            android:hint="Enter URL" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Title: "
-                android:textSize="14dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"/>
-            <EditText
-                android:id="@+id/add_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:background="@drawable/border_update"
-                android:padding="10dp"
-                android:fontFamily="@font/sarabun_regular"
-                android:hint="Enter Title" />
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Save" />
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Back"
+            android:backgroundTint="@color/Silver"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="URL Iamge: "
-                android:textSize="14dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"/>
-            <EditText
-                android:id="@+id/add_urlImg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:background="@drawable/border_update"
-                android:padding="10dp"
-                android:fontFamily="@font/sarabun_regular"
-                android:hint="Enter URL" />
-
-            <Button
-                android:id="@+id/btnAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:fontFamily="@font/mitr_regular"
-                android:backgroundTint="@color/colorPrimary"
-                android:text="Save" />
-            <Button
-                android:id="@+id/btnBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:text="Back"
-                android:backgroundTint="@color/Silver"/>
-
-        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
 
 </FrameLayout>

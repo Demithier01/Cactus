@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <font-family xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Segoe UI -->
     <font
         android:fontStyle="normal"
-        android:fontWeight="400"
-        android:font="@font/notoserifthai_regular"/>
-    <font
-        android:fontStyle="normal"
-        android:fontWeight="300"
-        android:font="@font/notoserifthai_light"/>
+        android:font="@font/segoe_ui"/>
+    <!-- Sarabun -->
     <font
         android:fontStyle="normal"
         android:fontWeight="300"
         android:font="@font/sarabun_light"/>
-
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
@@ -23,15 +19,8 @@
         android:fontWeight="200"
         android:font="@font/sarabun_extralight"/>
 
-    <font
-        android:fontStyle="normal"
-        android:fontWeight="300"
-        android:font="@font/kanit_light"/>
-    <font
-        android:fontStyle="normal"
-        android:fontWeight="400"
-        android:font="@font/kanit_regular"/>
 
+    <!-- Mirt -->
     <font
         android:fontStyle="normal"
         android:fontWeight="300"

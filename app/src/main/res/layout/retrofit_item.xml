@@ -45,7 +45,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/mitr_regular"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -55,7 +54,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="10dp"
-                    android:fontFamily="@font/mitr_light"
                     android:text="id"
                     android:textSize="14dp"
                     android:textColor="@color/colorGray"/>

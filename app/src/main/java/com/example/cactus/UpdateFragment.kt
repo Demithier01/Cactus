@@ -32,16 +32,16 @@ class UpdateFragment : Fragment() {
 
         speciesItem = arguments?.getParcelable("id") ?: SpeciesItem()
 
-        // Populate UI with current data
+        // ดึงข้อมูลปัจจุบันมาแสดง
         binding.editName.setText(speciesItem.name)
         binding.editTitle.setText(speciesItem.title)
         binding.editImage.setText(speciesItem.image)
         binding.btnUp.setOnClickListener {
-            // Update the speciesItem with new data
+            // Update speciesItem ด้วยข้อมูลใหม่
             val name = binding.editName.text.toString()
             val title = binding.editTitle.text.toString()
             val image = binding.editImage.text.toString()
-            // Update other fields as needed
+            // Update other fields
             if (name.isNotEmpty() && title.isNotEmpty() && image.isNotEmpty()) {
                 val updatedSpeciesItem = speciesItem.copy(
                     name = name,
@@ -49,7 +49,6 @@ class UpdateFragment : Fragment() {
                     image = image
                 )
                 speciesItem.id?.let { it1 -> viewModel.updateDataById(it1, updatedSpeciesItem) }
-                // Navigate back to RetrofitFragment
                 findNavController().popBackStack()
             } else {
                 Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()

@@ -26,10 +26,10 @@ class RetrofitFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentRetrofitBinding.inflate(inflater, container, false)
-        // Create the Retrofit instance and the SpeciesService
+
         val retrofit = RetrofitInstance.getRetrofitInstance()
         val speciesService = retrofit.create(SpeciesService::class.java)
-        // Create the ViewModel with the SpeciesServiceFactory
+
         val viewModelFactory = SpeciesServiceFactory(speciesService)
         viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(RetrofitViewModel::class.java)
         viewModel.speciesList.observe(viewLifecycleOwner, Observer { speciesList ->
@@ -65,15 +65,12 @@ class RetrofitFragment : Fragment() {
         binding.buttonAdd.setOnClickListener {
             findNavController().navigate(R.id.action_retrofitFragment_to_addDataFragment)
         }
-
         return binding.root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.fetchData()
-
 
         binding.search.setOnQueryTextListener(object :androidx.appcompat.widget.SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {

@@ -47,20 +47,16 @@ class SpeciesAdapter(private var speciesList: List<SpeciesItem>,
            val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext)
            alertDialogBuilder.setTitle("Confirm delete")
            alertDialogBuilder.setMessage("Are you sure you want to delete this ${speciesItem.name}?")
-
            alertDialogBuilder.setPositiveButton("Delete") { _, _ ->
-               // User clicked Yes, proceed with deletion
                onDeleteItem.invoke(speciesItem)
            }
 
            alertDialogBuilder.setNegativeButton("Cancel") { _, _ ->
-               // User clicked No, do nothing
            }
 
            val alertDialog = alertDialogBuilder.create()
            alertDialog.show()
        }
-
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpeciesViewHolder {
