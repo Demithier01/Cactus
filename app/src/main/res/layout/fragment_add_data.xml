@@ -3,21 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:add="http://schemas.android.com/apk/res-auto"
     tools:context=".AddDataFragment"
-    android:background="#FAFAFA">
+    android:background="@color/grey_50">
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_gravity="center"
             android:text="Creat Data"
             android:textSize="20dp"
@@ -30,15 +31,13 @@
             android:textSize="14dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"/>
+
         <EditText
             android:id="@+id/addId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/Border.EditText"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
-            android:background="@drawable/border_update"
-            android:padding="10dp"
-            android:hint="Enter Id"
+            android:hint="@string/please_enter_id"
             android:inputType="number"/>
 
         <TextView
@@ -50,13 +49,10 @@
             android:layout_marginTop="20dp"/>
         <EditText
             android:id="@+id/add_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/Border.EditText"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
-            android:background="@drawable/border_update"
-            android:padding="10dp"
-            android:hint="Enter Name" />
+            android:hint="@string/please_enter_name" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -67,12 +63,9 @@
             android:layout_marginTop="20dp"/>
         <EditText
             android:id="@+id/add_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/Border.EditText"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
-            android:background="@drawable/border_update"
-            android:padding="10dp"
             android:hint="Enter Title" />
 
         <TextView
@@ -84,31 +77,27 @@
             android:layout_marginTop="20dp"/>
         <EditText
             android:id="@+id/add_urlImg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/Border.EditText"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
-            android:background="@drawable/border_update"
-            android:padding="10dp"
             android:hint="Enter URL" />
 
         <Button
             android:id="@+id/btnAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+           style="@style/Button.Primary"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:text="Save" />
+            android:layout_marginTop="20dp"
+            android:text="Save"
+            android:textStyle="bold"/>
+
         <Button
             android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Outlined_Button"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:text="Back"
-            android:backgroundTint="@color/Silver"/>
+            android:textStyle="bold"/>
 
     </LinearLayout>
 </ScrollView>

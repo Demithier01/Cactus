@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FAFAFA">
+        android:background="@color/grey_50">
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search"
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Welcome, DM Cactus"
-            android:textColor="@color/colorGray"
+            android:textColor="@color/grey_500"
             android:layout_marginStart="20dp"
             android:layout_marginTop="60dp"
             android:fontFamily="@font/sarabun_regular"
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="#F3F1F1"
-            android:src="@android:drawable/ic_input_add"
+            android:src="@drawable/ic_add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
