@@ -20,14 +20,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_gravity="center"
-            android:text="Creat Data"
+            android:text="@string/create_data"
             android:textSize="20dp"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ID: "
+            android:text="@string/id"
             android:textSize="14dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"/>
@@ -43,7 +43,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name: "
+            android:text="@string/name"
             android:textSize="14dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"/>
@@ -57,7 +57,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Title: "
+            android:text="@string/title"
             android:textSize="14dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"/>

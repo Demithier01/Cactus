@@ -12,4 +12,10 @@
     <string name="imageDetail">image_detail</string>
     <string name="please_enter_id">Please enter ID</string>
     <string name="please_enter_name">Please enter Name</string>
+    <string name="create_data">Create Data</string>
+    <string name="id">ID:</string>
+    <string name="name">Name:</string>
+    <string name="title">Title:</string>
+    <string name="update">Update</string>
+    <string name="back">Back</string>
 </resources>
