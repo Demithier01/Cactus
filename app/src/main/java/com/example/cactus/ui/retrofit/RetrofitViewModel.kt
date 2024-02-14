@@ -1,4 +1,4 @@
-package com.example.cactus.retrofit
+package com.example.cactus.ui.retrofit
 
 import android.util.Log
 import androidx.lifecycle.LiveData

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:add="http://schemas.android.com/apk/res-auto"
-    tools:context=".AddDataFragment"
+    tools:context=".ui.addData.AddDataFragment"
     android:background="@color/grey_50">
 <ScrollView
     android:layout_width="match_parent"
@@ -82,13 +82,17 @@
             android:layout_marginEnd="40dp"
             android:hint="Enter URL" />
 
-        <Button
+        <com.example.cactus.component.CustomButton
             android:id="@+id/btnAdd"
-           style="@style/Button.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:text="Save"
-            android:textStyle="bold"/>
+            android:textSize="20dp"
+            android:background="@color/brown_50"
+            android:textStyle="bold" />
+
 
         <Button
             android:id="@+id/btnBack"

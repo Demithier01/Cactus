@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.cactus.R
-import com.example.cactus.retrofit.RetrofitViewModel
+import com.example.cactus.ui.retrofit.RetrofitViewModel
 import com.example.cactus.databinding.RetrofitItemBinding
 import com.example.cactus.model.SpeciesItem
 import com.google.android.material.dialog.MaterialAlertDialogBuilder

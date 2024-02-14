@@ -1,4 +1,4 @@
-package com.example.cactus
+package com.example.cactus.ui.updateData
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,7 +13,7 @@ import com.example.cactus.api.SpeciesService
 import com.example.cactus.api.SpeciesServiceFactory
 import com.example.cactus.databinding.FragmentUpdateBinding
 import com.example.cactus.model.SpeciesItem
-import com.example.cactus.retrofit.RetrofitViewModel
+import com.example.cactus.ui.retrofit.RetrofitViewModel
 
 class UpdateFragment : Fragment() {
     private lateinit var binding: FragmentUpdateBinding

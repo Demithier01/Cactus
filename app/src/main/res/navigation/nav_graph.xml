@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/retrofitFragment"
-        android:name="com.example.cactus.retrofit.RetrofitFragment"
+        android:name="com.example.cactus.ui.retrofit.RetrofitFragment"
         android:label="fragment_retrofit"
         tools:layout="@layout/fragment_retrofit" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.cactus.DetailFragment"
+        android:name="com.example.cactus.ui.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
         <action
@@ -31,12 +31,12 @@
     </fragment>
     <fragment
         android:id="@+id/addDataFragment"
-        android:name="com.example.cactus.AddDataFragment"
+        android:name="com.example.cactus.ui.addData.AddDataFragment"
         android:label="fragment_add_data"
         tools:layout="@layout/fragment_add_data" />
     <fragment
         android:id="@+id/updateFragment"
-        android:name="com.example.cactus.UpdateFragment"
+        android:name="com.example.cactus.ui.updateData.UpdateFragment"
         android:label="fragment_update"
         tools:layout="@layout/fragment_update" />
 

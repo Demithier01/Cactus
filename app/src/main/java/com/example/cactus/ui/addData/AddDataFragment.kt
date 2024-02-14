@@ -1,4 +1,4 @@
-package com.example.cactus
+package com.example.cactus.ui.addData
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,7 +13,8 @@ import com.example.cactus.api.SpeciesService
 import com.example.cactus.api.SpeciesServiceFactory
 import com.example.cactus.databinding.FragmentAddDataBinding
 import com.example.cactus.model.SpeciesItem
-import com.example.cactus.retrofit.RetrofitViewModel
+import com.example.cactus.component.CustomButton
+import com.example.cactus.ui.retrofit.RetrofitViewModel
 
 class AddDataFragment : Fragment() {
     private lateinit var binding: FragmentAddDataBinding
@@ -27,6 +28,7 @@ class AddDataFragment : Fragment() {
         val speciesService = RetrofitInstance.getRetrofitInstance().create(SpeciesService::class.java)
         val viewModelFactory = SpeciesServiceFactory(speciesService)
         viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(RetrofitViewModel::class.java)
+
 
         binding.btnAdd.setOnClickListener {
             val id = binding.addId.text.toString()
