@@ -33,7 +33,8 @@ class CustomButton @JvmOverloads constructor(
 
         // Set layout params with margins
         layoutParams = ConstraintLayout.LayoutParams(
-            LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
         ).apply {
             setMargins(0, dpToPx(10), 0, dpToPx(47))
         }
