@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.updateData.UpdateFragment"
     android:background="@color/grey_50">
 
@@ -49,17 +50,24 @@
                 style="@style/Border.EditText"
                 android:hint="editTitle" />
 
-            <TextView
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="14dp"-->
+<!--                android:text="URL Image: "-->
+<!--                android:textSize="14dp" />-->
+
+<!--            <EditText-->
+<!--                -->
+<!--                style="@style/Border.EditText"-->
+<!--                android:hint="editImage"/>-->
+            <com.example.cactus.component.CustomTextFieldEdit
+                android:id="@+id/editImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:text="URL Image: "
-                android:textSize="14dp" />
-
-            <EditText
-                android:id="@+id/editImage"
-                style="@style/Border.EditText"
-                android:hint="editImage"/>
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:hint="URL image"/>
 
             <com.example.cactus.component.CustomButton
                 android:id="@+id/btnUp"

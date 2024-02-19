@@ -9,6 +9,7 @@
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,19 +19,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:text="@string/create_data"
             android:textSize="20dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/id"
-            android:textSize="14dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:text="@string/id"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/addId"
@@ -38,15 +39,16 @@
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
             android:hint="@string/please_enter_id"
-            android:inputType="number"/>
+            android:inputType="number" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/name"
-            android:textSize="14dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:text="@string/name"
+            android:textSize="14dp" />
+
         <EditText
             android:id="@+id/add_name"
             style="@style/Border.EditText"
@@ -57,10 +59,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title"
-            android:textSize="14dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:text="@string/title"
+            android:textSize="14dp" />
+
         <EditText
             android:id="@+id/add_title"
             style="@style/Border.EditText"
@@ -68,27 +71,27 @@
             android:layout_marginEnd="40dp"
             android:hint="Enter Title" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="URL Iamge: "
-            android:textSize="14dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp"/>
-<!--        <EditText-->
-<!--            android:id="@+id/add_urlImg"-->
-<!--            style="@style/Border.EditText"-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
 <!--            android:layout_marginStart="40dp"-->
-<!--            android:layout_marginEnd="40dp"-->
-<!--            android:hint="Enter URL" />-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:text="URL Iamge: "-->
+<!--            android:textSize="14dp" />-->
+        <!--        <EditText-->
+        <!--            android:id="@+id/add_urlImg"-->
+        <!--            style="@style/Border.EditText"-->
+        <!--            android:layout_marginStart="40dp"-->
+        <!--            android:layout_marginEnd="40dp"-->
+        <!--            android:hint="Enter URL" />-->
         <com.example.cactus.component.CustomTextFieldEdit
             android:id="@+id/add_urlImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:textSize="16dp"
-            android:hint="enter please"/>
+            android:layout_marginTop="20dp"
+            android:hint="URL Iamge"/>
+
 
         <com.example.cactus.component.CustomButton
             android:id="@+id/btnAdd"
@@ -108,7 +111,7 @@
             android:layout_marginTop="20dp"
             android:text="BACK"
             android:textSize="20dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 </ScrollView>

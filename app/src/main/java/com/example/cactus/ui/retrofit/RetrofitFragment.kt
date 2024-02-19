@@ -100,10 +100,3 @@ class RetrofitFragment : Fragment() {
         })
     }
 }
-
-//        viewModel.updateData(SpeciesItem(null,null,null))
-//        viewModel.createData(SpeciesItem(
-//            "",
-//            "",
-//            "" ))
-//        viewModel.deleteData("")

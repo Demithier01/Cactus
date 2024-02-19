@@ -14,16 +14,20 @@ import com.example.cactus.api.SpeciesServiceFactory
 import com.example.cactus.databinding.FragmentAddDataBinding
 import com.example.cactus.model.SpeciesItem
 import com.example.cactus.component.CustomButton
+import com.example.cactus.component.CustomTextFieldEdit
 import com.example.cactus.ui.retrofit.RetrofitViewModel
 
 class AddDataFragment : Fragment() {
     private lateinit var binding: FragmentAddDataBinding
     private lateinit var viewModel: RetrofitViewModel
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentAddDataBinding.inflate(inflater, container, false)
+
 
         val speciesService = RetrofitInstance.getRetrofitInstance().create(SpeciesService::class.java)
         val viewModelFactory = SpeciesServiceFactory(speciesService)
@@ -34,18 +38,17 @@ class AddDataFragment : Fragment() {
             val id = binding.addId.text.toString()
             val name = binding.addName.text.toString()
             val title = binding.addTitle.text.toString()
-            val imageUrl = binding.addUrlImg.text.toString()
+            val imageUrl = binding.addUrlImg.editText?.text.toString()
 
             if ( id.isNotEmpty() && name.isNotEmpty() && title.isNotEmpty() && imageUrl.isNotEmpty()) {
                 val newSpeciesItem = SpeciesItem(id,name, title, imageUrl)
                 viewModel.createItem(newSpeciesItem)
 
-                findNavController().popBackStack()
-            } else {
-                Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                    findNavController().popBackStack()
+                } else {
+                    Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                }
             }
-        }
-
         binding.btnBack.setOnClickListener {
             activity?.supportFragmentManager?.popBackStack()
         }
