@@ -13,17 +13,28 @@
         <attr name="android:textColor" format="color" />
         <attr name="android:strokeColor" format="color"/>
         <attr name="android:strokeWidth" format="dimension"/>
+        <attr name="android:textSize" format="dimension" />
         <attr name="android:text" format="string"/>
     </declare-styleable>
 
 
         <declare-styleable name="CustomTextFieldEdit">
-            <attr name="textColor" format="color" />
-            <attr name="textSize" format="dimension" />
-            <attr name="cornerRadius" format="dimension" />
-            <attr name="borderWidth" format="dimension" />
-            <attr name="borderColor" format="color" />
-            <attr name="backgroundColor" format="color" />
+            <attr name="android:textColor" format="color" />
+            <attr name="android:textSize" format="dimension" />
+            <attr name="android:strokeWidth" format="dimension"/>
+            <attr name="android:strokeColor" format="color" />
+            <attr name="android:background" format="color" />
+            <attr name="android:hint" format="string"/>
+            <attr name="hintTextColor" format="color"/>
+            <attr name="android:maxLength"/>
+
+            <attr name="android:inputType">
+                <flag name="none" value="1" />
+                <flag name="text" value="2" />
+                <flag name="textEmailAddress" value="3" />
+                <flag name="number" value="4" />
+                <flag name="numberDecimal" value="5" />
+            </attr>
 
         </declare-styleable>
 

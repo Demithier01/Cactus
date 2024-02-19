@@ -3,6 +3,7 @@ package com.example.cactus.component
 import android.content.Context
 import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.Gravity
 import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatButton
@@ -24,14 +25,12 @@ class CustomButton @JvmOverloads constructor(
         }
 
     init {
-        // Create GradientDrawable for button appearance
         val drawable = GradientDrawable().apply {
             setColor(ContextCompat.getColor(context, defaultBackgroundColor))
             setSize(dpToPx(280), dpToPx(60))
             cornerRadius = dpToPx(15).toFloat()
         }
 
-        // Set layout params with margins
         layoutParams = ConstraintLayout.LayoutParams(
             LinearLayout.LayoutParams.WRAP_CONTENT,
             LinearLayout.LayoutParams.WRAP_CONTENT
@@ -42,8 +41,9 @@ class CustomButton @JvmOverloads constructor(
         gravity = Gravity.CENTER
         background = drawable
         setTextColor(ContextCompat.getColor(context, defaultTextColor))
+        setTextSize(TypedValue.DENSITY_DEFAULT, textSize)
 
-        // Apply attributes from XML if available
+
         context.obtainStyledAttributes(attrs, R.styleable.CustomButton).use { typedArray ->
             customBackgroundColor = typedArray.getColor(
                 R.styleable.CustomButton_android_background,

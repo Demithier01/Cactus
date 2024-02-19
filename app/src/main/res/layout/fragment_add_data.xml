@@ -75,18 +75,20 @@
             android:textSize="14dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"/>
-        <EditText
-            android:id="@+id/add_urlImg"
-            style="@style/Border.EditText"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:hint="Enter URL" />
+<!--        <EditText-->
+<!--            android:id="@+id/add_urlImg"-->
+<!--            style="@style/Border.EditText"-->
+<!--            android:layout_marginStart="40dp"-->
+<!--            android:layout_marginEnd="40dp"-->
+<!--            android:hint="Enter URL" />-->
         <com.example.cactus.component.CustomTextFieldEdit
+            android:id="@+id/add_urlImg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:hint="entername"/>
+            android:textSize="16dp"
+            android:hint="enter please"/>
 
         <com.example.cactus.component.CustomButton
             android:id="@+id/btnAdd"
@@ -105,16 +107,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:text="BACK"
+            android:textSize="20dp"
             android:textStyle="bold"/>
-
-<!--        <Button-->
-<!--            android:id="@+id/btnBack"-->
-<!--            style="@style/Outlined_Button"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:layout_marginBottom="10dp"-->
-<!--            android:text="Back"-->
-<!--            android:textStyle="bold"/>-->
 
     </LinearLayout>
 </ScrollView>
