@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.updateData.UpdateFragment"
-    android:background="@color/grey_50">
+    android:background="@color/grey_400">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,7 +24,8 @@
                 android:layout_gravity="center"
                 android:text="Form Update Data"
                 android:textSize="20dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="@color/dark_blue_900"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -76,7 +77,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"
                 android:text="@string/update"
-                android:textSize="20dp"/>
+                android:textSize="20dp"
+                android:textStyle="bold"/>
 
             <com.example.cactus.component.CustomButtonOutline
                 android:id="@+id/btnBack"
@@ -85,6 +87,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"
                 android:text="Back"
+                android:textSize="20dp"
                 android:textStyle="bold"/>
 
         </LinearLayout>

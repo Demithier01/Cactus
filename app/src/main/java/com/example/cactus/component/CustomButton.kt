@@ -16,8 +16,9 @@ class CustomButton @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : AppCompatButton(context, attrs, defStyleAttr) {
 
-    private val defaultBackgroundColor = R.color.yellow_400
-    private val defaultTextColor = R.color.dark_blue_900
+    private val defaultBackgroundColor = ContextCompat.getColor(context,R.color.yellow_400)
+    private val defaultTextColor = ContextCompat.getColor(context,R.color.dark_blue_900)
+
     private var customBackgroundColor: Int = 0
         set(value) {
             field = value
@@ -26,7 +27,7 @@ class CustomButton @JvmOverloads constructor(
 
     init {
         val drawable = GradientDrawable().apply {
-            setColor(ContextCompat.getColor(context, defaultBackgroundColor))
+            setColor(defaultBackgroundColor)
             setSize(dpToPx(280), dpToPx(60))
             cornerRadius = dpToPx(15).toFloat()
         }
@@ -40,19 +41,15 @@ class CustomButton @JvmOverloads constructor(
 
         gravity = Gravity.CENTER
         background = drawable
-        setTextColor(ContextCompat.getColor(context, defaultTextColor))
+        setTextColor(defaultTextColor)
         setTextSize(TypedValue.DENSITY_DEFAULT, textSize)
-
 
         context.obtainStyledAttributes(attrs, R.styleable.CustomButton).use { typedArray ->
             customBackgroundColor = typedArray.getColor(
-                R.styleable.CustomButton_android_background,
-                ContextCompat.getColor(context, defaultBackgroundColor)
-            )
+                R.styleable.CustomButton_android_background, defaultBackgroundColor)
             setTextColor(
                 typedArray.getColor(
-                    R.styleable.CustomButton_android_textColor,
-                    ContextCompat.getColor(context, defaultTextColor)
+                    R.styleable.CustomButton_android_textColor,defaultTextColor
                 )
             )
         }
@@ -62,3 +59,4 @@ class CustomButton @JvmOverloads constructor(
         return (dp * resources.displayMetrics.density).toInt()
     }
 }
+

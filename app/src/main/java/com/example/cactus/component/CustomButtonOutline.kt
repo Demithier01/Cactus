@@ -19,15 +19,13 @@ class CustomButtonOutline @JvmOverloads constructor(
 ) : AppCompatButton(context, attrs, defStyleAttr) {
     private var strokeColor: Int = ContextCompat.getColor(context, R.color.yellow_400)
     private var strokeWidth: Float = 5f
-    private var textColor: Int = ContextCompat.getColor(context,R.color.yellow_400)
+    private var textColor = ContextCompat.getColor(context,R.color.yellow_400)
     init {
-
         val drawable = GradientDrawable().apply {
             setSize(dpToPx(280), dpToPx(60))
             shape = GradientDrawable.RECTANGLE
             cornerRadius = dpToPx(15).toFloat()
             setStroke(strokeWidth.toInt(),strokeColor)
-
         }
 
         layoutParams = ConstraintLayout.LayoutParams(
@@ -36,10 +34,13 @@ class CustomButtonOutline @JvmOverloads constructor(
         ).apply {
             setMargins(0, dpToPx(606), 0, dpToPx(47))
         }
+        gravity = Gravity.CENTER
+        background = drawable
+        setTextSize(TypedValue.DENSITY_DEFAULT,textSize)
+        setTextColor(textColor)
 
         context.obtainStyledAttributes(attrs, R.styleable.CustomButtonOutline).use { typedArray ->
             textColor = typedArray.getColor(R.styleable.CustomButtonOutline_android_textColor, textColor)
-
             strokeColor = typedArray.getColor(
                 R.styleable.CustomButtonOutline_android_strokeColor, strokeColor
             )
@@ -48,9 +49,7 @@ class CustomButtonOutline @JvmOverloads constructor(
             )
             drawable.setStroke(strokeWidth.toInt(), strokeColor)
         }
-        gravity = Gravity.CENTER
-        background = drawable
-        setTextSize(TypedValue.DENSITY_DEFAULT,textSize)
+
     }
     private fun dpToPx(dp: Int): Int {
         return (dp * resources.displayMetrics.density).toInt()

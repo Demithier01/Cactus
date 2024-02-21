@@ -35,9 +35,9 @@ class AddDataFragment : Fragment() {
 
 
         binding.btnAdd.setOnClickListener {
-            val id = binding.addId.text.toString()
-            val name = binding.addName.text.toString()
-            val title = binding.addTitle.text.toString()
+            val id = binding.addId.editText?.text.toString()
+            val name = binding.addName.editText?.text.toString()
+            val title = binding.addTitle.editText?.text.toString()
             val imageUrl = binding.addUrlImg.editText?.text.toString()
 
             if ( id.isNotEmpty() && name.isNotEmpty() && title.isNotEmpty() && imageUrl.isNotEmpty()) {
