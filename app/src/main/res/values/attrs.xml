@@ -20,13 +20,8 @@
 
     <declare-styleable name="CustomTextFieldEdit">
         <attr name="android:textColor" format="color" />
-        <attr name="android:textSize" format="dimension" />
-        <attr name="android:strokeWidth" format="dimension"/>
-        <attr name="android:strokeColor" format="color" />
-        <attr name="android:background" format="color" />
+        <attr name="android:textColorHint" format="color"/>
         <attr name="android:hint" format="string"/>
-        <attr name="hintTextColor" format="color"/>
-        <attr name="android:maxLength"/>
 
         <attr name="android:inputType">
             <flag name="none" value="1" />
@@ -35,12 +30,6 @@
             <flag name="number" value="4" />
             <flag name="numberDecimal" value="5" />
         </attr>
-
-    </declare-styleable>
-
-    <declare-styleable name="TextFieldComponent">
-        <attr name="android:strokeColor" format="color" />
-        <attr name="android:hint" format="string"/>
 
     </declare-styleable>
 

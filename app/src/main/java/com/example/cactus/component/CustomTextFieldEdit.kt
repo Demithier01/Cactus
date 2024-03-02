@@ -1,16 +1,15 @@
 package com.example.cactus.component
 
 import android.content.Context
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import androidx.core.content.ContextCompat
 import androidx.core.view.setPadding
 import com.example.cactus.R
-import com.google.android.material.textfield.TextInputEditText
+import com.example.cactus.databinding.WidgetTextfieldBinding
 import com.google.android.material.textfield.TextInputLayout
 
 class CustomTextFieldEdit @JvmOverloads constructor(
@@ -19,54 +18,40 @@ class CustomTextFieldEdit @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : TextInputLayout(context, attrs, defStyleAttr) {
 
-    private var backgroundColor: Int =  ContextCompat.getColor(context, R.color.grey_50)
-    private var strokeColor: Int = ContextCompat.getColor(context,R.color.dark_blue_900)
-    private var textColor: Int =  ContextCompat.getColor(context, R.color.black_50)
-    private var hintTextColor: Int = ContextCompat.getColor(context, R.color.black_50)
+    private var textColor: Int = ContextCompat.getColor(context,R.color.black)
+    private var hintTextColor: Int = ContextCompat.getColor(context,R.color.black_50)
+
+    private val binding = WidgetTextfieldBinding.inflate(LayoutInflater.from(context)).also { addView(it.root) }
+    private val editText = binding.editTextField
 
     init {
-        boxBackgroundMode = BOX_BACKGROUND_OUTLINE
-        val editText = TextInputEditText(context)
-        addView(editText)
-        context.obtainStyledAttributes(attrs, R.styleable.CustomTextFieldEdit).use { typedArray ->
-            backgroundColor = typedArray.getColor(R.styleable.CustomTextFieldEdit_android_background,backgroundColor)
-            textColor = typedArray.getColor(R.styleable.CustomTextFieldEdit_android_textColor, textColor)
-            hintTextColor = typedArray.getColor(R.styleable.CustomTextFieldEdit_hintTextColor, hintTextColor)
+        editText.apply {
+            setHintTextColor(hintTextColor)
+            setTextColor(textColor)
+            setPadding(dpToPx(8))
+            isSingleLine = false
+        }
+        binding.root.layoutParams = LayoutParams(
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+        gravity = Gravity.CENTER
+        initAttrs(attrs)
+    }
+
+    private fun initAttrs (attrs: AttributeSet?){
+        context.obtainStyledAttributes(attrs,R.styleable.CustomTextFieldEdit).use { typedArray ->
+            textColor = typedArray.getColor(R.styleable.CustomTextFieldEdit_android_textColor,textColor)
+            hintTextColor = typedArray.getColor(R.styleable.CustomTextFieldEdit_android_textColorHint,hintTextColor)
             val inputType = typedArray.getInt(R.styleable.CustomTextFieldEdit_android_inputType, EditorInfo.TYPE_CLASS_TEXT)
             editText.inputType = inputType
+            val fieldHint = typedArray.getString(R.styleable.CustomTextFieldEdit_android_hint)
+            binding.editTextField.hint = fieldHint
         }
-        editText.apply {
-            setTextColor(textColor)
-            setHintTextColor(hintTextColor)
-            setSingleLine(false)
-            setPadding(dpToPx(8))
-            setLeftTopRightBottom(dpToPx(35),dpToPx(494),0,0)
-            background = getBackground(dpToPx(10))
-        }
-        layoutParams = LayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        ).apply {
-            setMargins(dpToPx(20),0,dpToPx(20),0)
-        }
-        gravity = Gravity.CENTER
-
-
     }
-   private fun getBackground(radius: Int): Drawable {
-    val background = GradientDrawable()
-    background.apply {
-        shape = GradientDrawable.RECTANGLE
-        cornerRadius = radius.toFloat()
-        setSize(dpToPx(325), dpToPx(60))
-        setStroke(dpToPx(1), strokeColor)
-        setColor(backgroundColor)
-
-    }
-    return background
-}
 
     private fun dpToPx(dp: Int): Int {
         return (dp * resources.displayMetrics.density).toInt()
     }
 }
+

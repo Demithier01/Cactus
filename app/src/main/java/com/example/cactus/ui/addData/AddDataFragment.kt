@@ -21,18 +21,15 @@ class AddDataFragment : Fragment() {
     private lateinit var binding: FragmentAddDataBinding
     private lateinit var viewModel: RetrofitViewModel
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentAddDataBinding.inflate(inflater, container, false)
 
-
         val speciesService = RetrofitInstance.getRetrofitInstance().create(SpeciesService::class.java)
         val viewModelFactory = SpeciesServiceFactory(speciesService)
         viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(RetrofitViewModel::class.java)
-
 
         binding.btnAdd.setOnClickListener {
             val id = binding.addId.editText?.text.toString()
@@ -43,7 +40,6 @@ class AddDataFragment : Fragment() {
             if ( id.isNotEmpty() && name.isNotEmpty() && title.isNotEmpty() && imageUrl.isNotEmpty()) {
                 val newSpeciesItem = SpeciesItem(id,name, title, imageUrl)
                 viewModel.createItem(newSpeciesItem)
-
                     findNavController().popBackStack()
                 } else {
                     Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()

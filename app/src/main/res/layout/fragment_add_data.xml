@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:add="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.addData.AddDataFragment"
-    android:background="@color/grey_400">
+    android:background="#E5E4E2">
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -23,87 +23,50 @@
             android:layout_marginTop="20dp"
             android:text="@string/create_data"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="40dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:text="@string/id"-->
-<!--            android:textSize="14dp" />-->
-
-<!--        <EditText-->
-<!--            android:id="@+id/addId"-->
-<!--            style="@style/Border.EditText"-->
-<!--            android:layout_marginStart="40dp"-->
-<!--            android:layout_marginEnd="40dp"-->
-<!--            android:hint="@string/please_enter_id"-->
-<!--            android:inputType="number" />-->
-        <com.example.cactus.component.CustomTextFieldEdit
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/addId"
-            android:layout_width="325dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:hint="ID"
-            add:helperText="please enter Id"
-            android:inputType="numberDecimal"/>
+            style="@style/CustomTextInputLayoutStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="40dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:text="@string/name"-->
-<!--            android:textSize="14dp" />-->
-
-<!--        <EditText-->
-<!--            android:id="@+id/add_name"-->
-<!--            style="@style/Border.EditText"-->
-<!--            android:layout_marginStart="40dp"-->
-<!--            android:layout_marginEnd="40dp"-->
-<!--            android:hint="@string/please_enter_name" />-->
-        <com.example.cactus.component.CustomTextFieldEdit
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/add_name"
-            android:layout_width="325dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:hint="Name"
-            add:helperText="@string/please_enter_name"/>
+            style="@style/CustomTextInputLayoutStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="40dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:text="@string/title"-->
-<!--            android:textSize="14dp" />-->
-
-<!--        <EditText-->
-<!--            android:id="@+id/add_title"-->
-<!--            style="@style/Border.EditText"-->
-<!--            android:layout_marginStart="40dp"-->
-<!--            android:layout_marginEnd="40dp"-->
-<!--            android:hint="Enter Title" />-->
-        <com.example.cactus.component.CustomTextFieldEdit
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/add_title"
-            android:layout_width="325dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:hint="Title"
-            add:helperText="Please enter Title"/>
+            style="@style/CustomTextInputLayoutStyle">
 
-        <com.example.cactus.component.CustomTextFieldEdit
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/add_urlImg"
-            android:layout_width="325dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:hint="Image URL"
-            add:helperText="Please enter Image url"/>
+            android:hint="URL Image"
+            style="@style/CustomTextInputLayoutStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.example.cactus.component.CustomButton
