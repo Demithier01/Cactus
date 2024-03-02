@@ -13,8 +13,6 @@ import com.example.cactus.api.SpeciesService
 import com.example.cactus.api.SpeciesServiceFactory
 import com.example.cactus.databinding.FragmentAddDataBinding
 import com.example.cactus.model.SpeciesItem
-import com.example.cactus.component.CustomButton
-import com.example.cactus.component.CustomTextFieldEdit
 import com.example.cactus.ui.retrofit.RetrofitViewModel
 
 class AddDataFragment : Fragment() {
