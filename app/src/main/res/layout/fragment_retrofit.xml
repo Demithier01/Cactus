@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E5E4E2">
+        android:background="#DEEDFF">
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search"
@@ -24,11 +24,10 @@
             android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_horizontal"
             android:text="Cactus Data Garden🌵🌵"
-            android:textColor="@color/black"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="65dp"
+            android:textSize="14dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="10dp"
             app:layout_constraintTop_toBottomOf="@id/search"
             app:layout_constraintBottom_toTopOf="@id/rvRetrofit"
             />
@@ -37,7 +36,7 @@
             android:id="@+id/rvRetrofit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="82dp"
+            android:layout_marginTop="85dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
@@ -46,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            app:backgroundTint="@color/white"
+            app:backgroundTint="@color/dark_blue_100"
             android:src="@drawable/ic_add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>

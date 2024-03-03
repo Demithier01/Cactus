@@ -10,7 +10,7 @@
         android:layout_margin="10dp"
         app:cardElevation="4dp"
         app:cardCornerRadius="8dp"
-        android:background="@color/white">
+        android:backgroundTint="@color/grey_50">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,7 +69,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:id="@+id/textID"
@@ -79,7 +79,7 @@
                         android:layout_marginStart="10dp"
                         android:text="id"
                         android:textSize="14dp"
-                        android:textColor="@color/grey_400"/>
+                        android:textColor="@color/grey_600"/>
 
                 </LinearLayout>
             </LinearLayout>
