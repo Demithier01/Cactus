@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/retrofitFragment">
+    app:startDestination="@id/fragmentSplashScreen">
 
     <fragment
         android:id="@+id/retrofitFragment"
@@ -39,6 +39,15 @@
         android:name="com.example.cactus.ui.updateData.UpdateFragment"
         android:label="fragment_update"
         tools:layout="@layout/fragment_update" />
+    <fragment
+        android:id="@+id/fragmentSplashScreen"
+        android:name="com.example.cactus.ui.FragmentSplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_fragmentSplashScreen_to_retrofitFragment"
+            app:destination="@id/retrofitFragment" />
+    </fragment>
 
 
 </navigation>

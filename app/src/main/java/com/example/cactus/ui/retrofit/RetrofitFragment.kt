@@ -6,10 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.compose.ui.window.Dialog
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.example.cactus.R
 import com.example.cactus.api.RetrofitInstance
 import com.example.cactus.api.SpeciesService
@@ -93,10 +97,17 @@ class RetrofitFragment : Fragment() {
         viewModel.speciesList.observe(viewLifecycleOwner, Observer { type ->
             val checkedList = type.filter { it.name!!.lowercase(Locale.ROOT).contains(query?.lowercase(Locale.ROOT) ?: "") }
             if (checkedList.isEmpty()) {
-                Toast.makeText(requireContext(), "No Data found", Toast.LENGTH_SHORT).show()
+                showSweetAlertDialog("")
             } else {
                 adapterSpecies.setCheckedList(checkedList)
             }
         })
+    }
+    private fun showSweetAlertDialog(message: String) {
+        SweetAlertDialog(requireContext(), SweetAlertDialog.ERROR_TYPE)
+            .setTitleText("No Data found!!")
+            .setConfirmText("Close")
+            .show()
+
     }
 }

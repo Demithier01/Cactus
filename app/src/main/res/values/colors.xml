@@ -22,6 +22,12 @@
     <color name="dark_blue_100">#C5Cae9</color>
     <color name="dark_blue_50">#E8EAF6</color>
 
+
+    <color name="blue_50">#DFEDFF</color>
+    <color name="blue_60">#DEEDFF</color>
+    <color name="blue_200">#9FC0E8</color>
+
+
     <color name="green_900">#0D5302</color>
     <color name="green_800">#056F00</color>
     <color name="green_400">#2BAF2B</color>

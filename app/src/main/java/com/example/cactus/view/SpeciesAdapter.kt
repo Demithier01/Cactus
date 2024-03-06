@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.compose.ui.graphics.Color
 import androidx.recyclerview.widget.RecyclerView
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.bumptech.glide.Glide
 import com.example.cactus.R
 import com.example.cactus.ui.retrofit.RetrofitViewModel
@@ -47,19 +48,17 @@ class SpeciesAdapter(private var speciesList: List<SpeciesItem>,
        }
 
        private fun showDeleteConfirmationDialog(speciesItem: SpeciesItem) {
-           val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext)
-           alertDialogBuilder.setTitle("Confirm delete")
-           alertDialogBuilder.setMessage("Are you sure you want to delete this ${speciesItem.name}?")
-
-           alertDialogBuilder.setPositiveButton("Delete ") { _, _ ->
-               onDeleteItem.invoke(speciesItem)
-           }
-
-           alertDialogBuilder.setNegativeButton("Cancel") { _, _ ->
-           }
-
-           val alertDialog = alertDialogBuilder.create()
-           alertDialog.show()
+           SweetAlertDialog(requireContext, SweetAlertDialog.WARNING_TYPE)
+               .setTitleText("Delete")
+               .setContentText("Are you sure want to delete this ${speciesItem.name}?")
+               .setConfirmText("Delete")
+               .setCancelText("Cancel")
+               .setConfirmClickListener {
+                   onDeleteItem.invoke(speciesItem)
+                   it.dismissWithAnimation()
+               }
+               .setCancelClickListener { it.dismissWithAnimation() }
+               .show()
        }
    }
 

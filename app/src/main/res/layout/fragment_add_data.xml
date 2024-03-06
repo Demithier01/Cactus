@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:add="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.addData.AddDataFragment"
-    android:background="#9FC0E8">
+    android:background="@color/blue_200">
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
