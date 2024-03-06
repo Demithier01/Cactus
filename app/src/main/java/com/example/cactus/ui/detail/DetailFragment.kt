@@ -34,7 +34,9 @@ class DetailFragment : Fragment() {
     private fun displaySpeciesDetails(speciesItem: SpeciesItem) {
         binding.apply {
             detailName.text = speciesItem.name
-            detailTitle.text = speciesItem.title
+            detailSciName.text ="ชื่อทางวิทยาศาสตร์:\n${speciesItem.sciName}"
+            detailTitle.text = "ลักษณะทั่วไป:\n   ${speciesItem.title}"
+            detailAliment.text ="การดูแล:\n   ${speciesItem.aliment}"
             Glide.with(detailImg.context)
                 .load(speciesItem.image)
                 .placeholder(R.drawable.image)

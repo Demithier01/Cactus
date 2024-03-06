@@ -55,7 +55,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp">
 
-                            <!-- EditText Name-->
+                            <!-- Name EditText -->
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/editName"
                                 style="@style/CustomTextInputLayoutStyle"
@@ -66,7 +66,18 @@
                                     android:layout_height="wrap_content" />
                             </com.google.android.material.textfield.TextInputLayout>
 
-                            <!-- EditText Title-->
+                            <!-- Sci EditText -->
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/editSciName"
+                                style="@style/CustomTextInputLayoutStyle"
+                                android:hint="Sci">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <!-- Title EditText -->
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/editTitle"
                                 style="@style/CustomTextInputLayoutStyle"
@@ -78,6 +89,17 @@
                                     android:layout_height="wrap_content" />
                             </com.google.android.material.textfield.TextInputLayout>
 
+                            <!-- aliment EditText -->
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/editAliment"
+                                style="@style/CustomTextInputLayoutStyle"
+                                android:layout_marginTop="10dp"
+                                android:hint="Aliment">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </com.google.android.material.textfield.TextInputLayout>
 
                             <!-- EditText URL Image-->
                             <com.google.android.material.textfield.TextInputLayout

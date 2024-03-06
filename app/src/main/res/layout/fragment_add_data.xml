@@ -55,6 +55,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp">
 
+                        <!-- ID TextField -->
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/addId"
                             style="@style/CustomTextInputLayoutStyle"
@@ -66,6 +67,7 @@
                                 android:inputType="numberDecimal" />
                         </com.google.android.material.textfield.TextInputLayout>
 
+                        <!-- Name TextField -->
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/add_name"
                             style="@style/CustomTextInputLayoutStyle"
@@ -77,6 +79,19 @@
                                 android:layout_height="wrap_content" />
                         </com.google.android.material.textfield.TextInputLayout>
 
+                        <!-- Sci TextField -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/sci"
+                            style="@style/CustomTextInputLayoutStyle"
+                            android:layout_marginTop="10dp"
+                            android:hint="Sci">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Title TextField -->
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/add_title"
                             style="@style/CustomTextInputLayoutStyle"
@@ -88,6 +103,19 @@
                                 android:layout_height="wrap_content" />
                         </com.google.android.material.textfield.TextInputLayout>
 
+                        <!-- Aliment TextField -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/aliment"
+                            style="@style/CustomTextInputLayoutStyle"
+                            android:layout_marginTop="10dp"
+                            android:hint="aliment">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- URL Image TextField -->
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/add_urlImg"
                             style="@style/CustomTextInputLayoutStyle"
@@ -98,6 +126,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" />
                         </com.google.android.material.textfield.TextInputLayout>
+
                     </LinearLayout>
                 </ScrollView>
 

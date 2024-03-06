@@ -32,11 +32,13 @@ class AddDataFragment : Fragment() {
         binding.btnAdd.setOnClickListener {
             val id = binding.addId.editText?.text.toString()
             val name = binding.addName.editText?.text.toString()
+            val sci = binding.sci.editText?.text.toString()
             val title = binding.addTitle.editText?.text.toString()
+            val aliment = binding.aliment.editText?.text.toString()
             val imageUrl = binding.addUrlImg.editText?.text.toString()
 
-            if ( id.isNotEmpty() && name.isNotEmpty() && title.isNotEmpty() && imageUrl.isNotEmpty()) {
-                val newSpeciesItem = SpeciesItem(id,name, title, imageUrl)
+            if ( id.isNotEmpty() && name.isNotEmpty() && sci.isNotEmpty() && title.isNotEmpty()&& aliment.isNotEmpty() && imageUrl.isNotEmpty()) {
+                val newSpeciesItem = SpeciesItem(id,name,sci,title,aliment, imageUrl)
                 viewModel.createItem(newSpeciesItem)
                     findNavController().popBackStack()
                 } else {
