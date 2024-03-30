@@ -59,7 +59,7 @@
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/editName"
                                 style="@style/CustomTextInputLayoutStyle"
-                                android:hint="Name">
+                                android:hint="@string/name">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:layout_width="match_parent"
@@ -70,7 +70,7 @@
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/editSciName"
                                 style="@style/CustomTextInputLayoutStyle"
-                                android:hint="Sci">
+                                android:hint="@string/sci">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:layout_width="match_parent"
@@ -79,10 +79,10 @@
 
                             <!-- Title EditText -->
                             <com.google.android.material.textfield.TextInputLayout
-                                android:id="@+id/editTitle"
+                                android:id="@+id/editDescription"
                                 style="@style/CustomTextInputLayoutStyle"
                                 android:layout_marginTop="10dp"
-                                android:hint="Title">
+                                android:hint="@string/description">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:layout_width="match_parent"
@@ -94,7 +94,7 @@
                                 android:id="@+id/editAliment"
                                 style="@style/CustomTextInputLayoutStyle"
                                 android:layout_marginTop="10dp"
-                                android:hint="Aliment">
+                                android:hint="@string/aliment">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:layout_width="match_parent"
@@ -106,7 +106,7 @@
                                 android:id="@+id/editImage"
                                 style="@style/CustomTextInputLayoutStyle"
                                 android:layout_marginTop="10dp"
-                                android:hint="URL Image">
+                                android:hint="@string/url">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:layout_width="match_parent"
@@ -136,7 +136,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="40dp"
-                android:text="Back"
+                android:text="BACK"
                 android:textSize="20dp"
                 android:textStyle="bold" />
         </LinearLayout>

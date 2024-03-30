@@ -35,22 +35,22 @@ class UpdateFragment : Fragment() {
         // ดึงข้อมูลปัจจุบันมาแสดง
         binding.editName.editText?.setText(speciesItem.name)
         binding.editSciName.editText?.setText(speciesItem.sciName)
-        binding.editTitle.editText?.setText(speciesItem.title)
+        binding.editDescription.editText?.setText(speciesItem.description)
         binding.editAliment.editText?.setText(speciesItem.aliment)
         binding.editImage.editText?.setText(speciesItem.image)
         binding.btnUp.setOnClickListener {
             // Update speciesItem ด้วยข้อมูลใหม่
             val name = binding.editName.editText?.text.toString()
             val sci = binding.editSciName.editText?.text.toString()
-            val title = binding.editTitle.editText?.text.toString()
+            val description = binding.editDescription.editText?.text.toString()
             val aliment = binding.editAliment.editText?.text.toString()
             val image = binding.editImage.editText?.text.toString()
             // Update other fields
-            if (name.isNotEmpty() && sci.isNotEmpty() && title.isNotEmpty()  && aliment.isNotEmpty() && image.isNotEmpty()) {
+            if (name.isNotEmpty() && sci.isNotEmpty() && description.isNotEmpty()  && aliment.isNotEmpty() && image.isNotEmpty()) {
                 val updatedSpeciesItem = speciesItem.copy(
                     name = name,
                     sciName = sci,
-                    title = title,
+                    description = description,
                     aliment = aliment,
                     image = image
                 )

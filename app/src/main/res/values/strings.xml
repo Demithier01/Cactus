@@ -7,15 +7,22 @@
     <string name="more">more..</string>
     <string name="text">text</string>
     <string name="textview">TextView</string>
-    <string name="description">Description</string>
     <string name="backButton">back_button</string>
     <string name="imageDetail">image_detail</string>
     <string name="please_enter_id">Please enter ID</string>
     <string name="please_enter_name">Please enter Name</string>
     <string name="create_data">Create Data</string>
-    <string name="id">ID:</string>
-    <string name="name">Name:</string>
-    <string name="title">Title:</string>
-    <string name="update">Update</string>
-    <string name="back">Back</string>
+
+    <string name="id">ID</string>
+    <string name="name">Name</string>
+    <string name="sci">Scientific Name</string>
+    <string name="description">Description</string>
+    <string name="aliment">Aliment</string>
+    <string name="url">URL Image</string>
+
+
+    <string name="save">SAVE</string>
+    <string name="update">UPDATE</string>
+    <string name="back">BACK</string>
+
 </resources>

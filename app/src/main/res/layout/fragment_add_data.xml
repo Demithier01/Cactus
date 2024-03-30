@@ -59,7 +59,7 @@
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/addId"
                             style="@style/CustomTextInputLayoutStyle"
-                            android:hint="ID">
+                            android:hint="@string/id">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
@@ -72,7 +72,7 @@
                             android:id="@+id/add_name"
                             style="@style/CustomTextInputLayoutStyle"
                             android:layout_marginTop="10dp"
-                            android:hint="Name">
+                            android:hint="@string/name">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                             android:id="@+id/sci"
                             style="@style/CustomTextInputLayoutStyle"
                             android:layout_marginTop="10dp"
-                            android:hint="Sci">
+                            android:hint="@string/sci">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
@@ -93,10 +93,10 @@
 
                         <!-- Title TextField -->
                         <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/add_title"
+                            android:id="@+id/add_description"
                             style="@style/CustomTextInputLayoutStyle"
                             android:layout_marginTop="10dp"
-                            android:hint="Title">
+                            android:hint="@string/description">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
@@ -108,7 +108,7 @@
                             android:id="@+id/aliment"
                             style="@style/CustomTextInputLayoutStyle"
                             android:layout_marginTop="10dp"
-                            android:hint="aliment">
+                            android:hint="@string/aliment">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
@@ -120,7 +120,7 @@
                             android:id="@+id/add_urlImg"
                             style="@style/CustomTextInputLayoutStyle"
                             android:layout_marginTop="10dp"
-                            android:hint="URL Image">
+                            android:hint="@string/url">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
@@ -139,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:text="Save"
+            android:text="@string/save"
             android:textSize="20dp"
             android:textStyle="bold" />
 
