@@ -3,6 +3,9 @@ package com.example.cactus.ui.retrofit
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -21,12 +24,14 @@ import com.example.cactus.api.SpeciesServiceFactory
 import com.example.cactus.databinding.FragmentRetrofitBinding
 import com.example.cactus.model.SpeciesItem
 import com.example.cactus.view.SpeciesAdapter
+import com.google.firebase.auth.FirebaseAuth
 import java.util.Locale
 
 class RetrofitFragment : Fragment() {
     private lateinit var binding: FragmentRetrofitBinding
     private lateinit var viewModel: RetrofitViewModel
     private lateinit var adapterSpecies : SpeciesAdapter
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentRetrofitBinding.inflate(inflater, container, false)
@@ -66,6 +71,10 @@ class RetrofitFragment : Fragment() {
             updateUI(speciesList)
         })
 
+        binding.btnLogout.setOnClickListener{
+            FirebaseAuth.getInstance().signOut()
+            findNavController().navigate(R.id.action_retrofitFragment_to_loginFragment)
+        }
         binding.buttonAdd.setOnClickListener {
             findNavController().navigate(R.id.action_retrofitFragment_to_addDataFragment)
         }
@@ -86,6 +95,7 @@ class RetrofitFragment : Fragment() {
             }
         })
     }
+
     private fun updateUI(speciesList: List<SpeciesItem>) {
         binding.rvRetrofit.apply {
             setHasFixedSize(true)
@@ -110,4 +120,5 @@ class RetrofitFragment : Fragment() {
             .show()
 
     }
+
 }

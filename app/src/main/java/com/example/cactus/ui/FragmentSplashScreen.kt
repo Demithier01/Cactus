@@ -30,7 +30,7 @@ class FragmentSplashScreen : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         Handler(Looper.myLooper()!!).postDelayed({
-            findNavController().navigate(R.id.action_fragmentSplashScreen_to_retrofitFragment)
+            findNavController().navigate(R.id.action_fragmentSplashScreen_to_loginFragment2)
         },3000)
 
 

@@ -30,7 +30,7 @@
 
     <!--SearchView -->
     <style name="SearchView" parent="Widget.AppCompat.SearchView">
-        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_width">340dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/search_view</item>
         <item name="iconifiedByDefault">false</item>
