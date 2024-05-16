@@ -23,9 +23,9 @@
         <item name="hintTextColor">@color/black_50</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">18dp</item>
-        <item name="endIconDrawable">@drawable/ic_eye</item>
-        <item name="endIconTint">@color/dark_blue_900</item>
-        <item name="endIconMode">password_toggle</item>
+<!--        <item name="endIconDrawable">@drawable/ic_eye</item>-->
+<!--        <item name="endIconTint">@color/dark_blue_900</item>-->
+<!--        <item name="endIconMode">password_toggle</item>-->
     </style>
 
     <!--SearchView -->

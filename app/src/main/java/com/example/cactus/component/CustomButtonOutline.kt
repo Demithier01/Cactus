@@ -17,9 +17,9 @@ class CustomButtonOutline @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : AppCompatButton(context, attrs, defStyleAttr) {
-    private var strokeColor: Int = ContextCompat.getColor(context, R.color.yellow_400)
+    private var strokeColor: Int = ContextCompat.getColor(context, R.color.dark_blue_600)
     private var strokeWidth: Float = 5f
-    private var textColor = ContextCompat.getColor(context,R.color.yellow_400)
+    private var textColor = ContextCompat.getColor(context,R.color.dark_blue_600)
     init {
         val drawable = GradientDrawable().apply {
             setSize(dpToPx(280), dpToPx(60))

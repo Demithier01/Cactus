@@ -59,7 +59,10 @@
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/addId"
                             style="@style/CustomTextInputLayoutStyle"
-                            android:hint="@string/id">
+                            android:hint="@string/id"
+                            add:errorEnabled="true"
+                            add:counterEnabled="true"
+                            add:counterMaxLength="6">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
@@ -72,7 +75,8 @@
                             android:id="@+id/add_name"
                             style="@style/CustomTextInputLayoutStyle"
                             android:layout_marginTop="10dp"
-                            android:hint="@string/name">
+                            android:hint="@string/name"
+                            add:errorEnabled="true">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
@@ -84,7 +88,8 @@
                             android:id="@+id/sci"
                             style="@style/CustomTextInputLayoutStyle"
                             android:layout_marginTop="10dp"
-                            android:hint="@string/sci">
+                            android:hint="@string/sci"
+                            add:errorEnabled="true">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
@@ -96,7 +101,8 @@
                             android:id="@+id/add_description"
                             style="@style/CustomTextInputLayoutStyle"
                             android:layout_marginTop="10dp"
-                            android:hint="@string/description">
+                            android:hint="@string/description"
+                            add:errorEnabled="true">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
@@ -108,7 +114,8 @@
                             android:id="@+id/aliment"
                             style="@style/CustomTextInputLayoutStyle"
                             android:layout_marginTop="10dp"
-                            android:hint="@string/aliment">
+                            android:hint="@string/aliment"
+                            add:errorEnabled="true">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
@@ -120,7 +127,8 @@
                             android:id="@+id/add_urlImg"
                             style="@style/CustomTextInputLayoutStyle"
                             android:layout_marginTop="10dp"
-                            android:hint="@string/url">
+                            android:hint="@string/url"
+                            add:errorEnabled="true">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"

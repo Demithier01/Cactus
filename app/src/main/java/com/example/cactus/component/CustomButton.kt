@@ -16,8 +16,8 @@ class CustomButton @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : AppCompatButton(context, attrs, defStyleAttr) {
 
-    private val defaultBackgroundColor = ContextCompat.getColor(context,R.color.yellow_400)
-    private val defaultTextColor = ContextCompat.getColor(context,R.color.dark_blue_900)
+    private val defaultBackgroundColor = ContextCompat.getColor(context,R.color.dark_blue_600)
+    private val defaultTextColor = ContextCompat.getColor(context,R.color.white)
 
     private var customBackgroundColor: Int = 0
         set(value) {

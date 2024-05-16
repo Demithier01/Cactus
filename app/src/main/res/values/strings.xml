@@ -20,9 +20,9 @@
     <string name="aliment">Aliment</string>
     <string name="url">URL Image</string>
 
-
     <string name="save">SAVE</string>
     <string name="update">UPDATE</string>
     <string name="back">BACK</string>
+    <string name="error_name">Enter name</string>
 
 </resources>

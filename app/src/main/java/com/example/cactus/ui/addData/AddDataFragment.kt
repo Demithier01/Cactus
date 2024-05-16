@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.cactus.R
 import com.example.cactus.api.RetrofitInstance
 import com.example.cactus.api.SpeciesService
 import com.example.cactus.api.SpeciesServiceFactory
@@ -30,24 +31,47 @@ class AddDataFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(RetrofitViewModel::class.java)
 
         binding.btnAdd.setOnClickListener {
-            val id = binding.addId.editText?.text.toString()
-            val name = binding.addName.editText?.text.toString()
-            val sci = binding.sci.editText?.text.toString()
-            val description = binding.addDescription.editText?.text.toString()
-            val aliment = binding.aliment.editText?.text.toString()
-            val imageUrl = binding.addUrlImg.editText?.text.toString()
+            val fields = listOf(
+                binding.addId to "Enter ID",
+                binding.addName to "Enter Name",
+                binding.sci to "Enter Scientific Name",
+                binding.addDescription to "Enter Description",
+                binding.aliment to "Enter Aliment",
+                binding.addUrlImg to "Enter URL image"
+            )
 
-            if ( id.isNotEmpty() && name.isNotEmpty() && sci.isNotEmpty() && description.isNotEmpty()&& aliment.isNotEmpty() && imageUrl.isNotEmpty()) {
-                val newSpeciesItem = SpeciesItem(id,name,sci,description,aliment, imageUrl)
-                viewModel.createItem(newSpeciesItem)
-                    findNavController().popBackStack()
+            var hasEmptyField = false
+
+            fields.forEach { (editText, errorMessage) ->
+                val text = editText.editText?.text.toString()
+                if (text.isEmpty()) {
+                    editText.error =errorMessage
+                    hasEmptyField = true
                 } else {
-                    Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                    editText.error = null
                 }
             }
+
+            if (!hasEmptyField) {
+                val newSpeciesItem = SpeciesItem(
+                binding.addId.editText?.text.toString(),
+                        binding.addName.editText?.text.toString(),
+                binding.sci.editText?.text.toString(), binding.addDescription.editText?.text.toString(),
+                binding.aliment.editText?.text.toString(),
+                binding.addUrlImg.editText?.text.toString()
+                )
+                viewModel.createItem(newSpeciesItem)
+                findNavController().popBackStack()
+            } else {
+                Toast.makeText(requireContext(), "Please fill in all information.", Toast.LENGTH_SHORT).show()
+            }
+
+        }
+
         binding.btnBack.setOnClickListener {
             activity?.supportFragmentManager?.popBackStack()
         }
         return binding.root
     }
+
 }
