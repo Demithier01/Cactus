@@ -1,6 +1,5 @@
-package com.example.cactus
+package com.example.cactus.ui.loginAccount
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
+import cn.pedant.SweetAlert.SweetAlertDialog
+import com.example.cactus.R
 import com.example.cactus.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -51,41 +52,29 @@ class LoginFragment : Fragment() {
                 .addOnCompleteListener(requireActivity()) { task ->
 
                     if (task.isSuccessful) {
-                        Toast.makeText(requireContext(), "Username Successful", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Login successfully", Toast.LENGTH_SHORT).show()
+                                findNavController().navigate(R.id.action_loginFragment_to_retrofitFragment)
 
-                        findNavController().navigate(
-                            R.id.action_loginFragment_to_retrofitFragment)
                     } else {
-                        val alertDialogBuilder = AlertDialog.Builder(requireContext())
-                        alertDialogBuilder.setTitle("Username or not correct!!")
-                        alertDialogBuilder.setMessage("Please enter your username or password correctly.")
-                        alertDialogBuilder.setNegativeButton("Close") { dialog, _ ->
-                            dialog.dismiss()
-                        }
-                        val alertDialog = alertDialogBuilder.create()
-                        alertDialog.show()
-                        Toast.makeText(
-                            requireContext(), task.exception!!.message,
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        SweetAlertDialog(requireContext(), SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Error")
+                            .setContentText(task.exception!!.message)
+                            .show()
                     }
                 }
         } else {
-            val alertDialogBuilder = AlertDialog.Builder(requireContext())
-            alertDialogBuilder.setTitle("Error message!!")
-            alertDialogBuilder.setMessage("Please enter information")
-            alertDialogBuilder.setNegativeButton("Close") { dialog, _ ->
-                dialog.dismiss()
-            }
-            val alertDialog = alertDialogBuilder.create()
-            alertDialog.show()
+            SweetAlertDialog(requireContext(), SweetAlertDialog.ERROR_TYPE)
+                .setTitleText("Error")
+                .setContentText("Please enter information")
+                .show()
         }
     }
 
     private fun checkUserIsLogged(){
         if (user.currentUser !=null){
             findNavController().navigate(
-                R.id.action_loginFragment_to_retrofitFragment)
+                R.id.action_loginFragment_to_retrofitFragment
+            )
         }
     }
 }

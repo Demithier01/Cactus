@@ -71,9 +71,19 @@ class RetrofitFragment : Fragment() {
             updateUI(speciesList)
         })
 
-        binding.btnLogout.setOnClickListener{
-            FirebaseAuth.getInstance().signOut()
-            findNavController().navigate(R.id.action_retrofitFragment_to_loginFragment)
+        binding.btnLogout.setOnClickListener {
+            SweetAlertDialog(requireContext(), SweetAlertDialog.WARNING_TYPE)
+                .setTitleText("Log Out")
+                .setContentText("Do you want to logout?")
+                .setConfirmText("Ok")
+                .setCancelText("Cancel")
+                .setConfirmClickListener { dialog ->
+                    FirebaseAuth.getInstance().signOut()
+                    findNavController().navigate(R.id.action_retrofitFragment_to_loginFragment)
+                    dialog.dismissWithAnimation()
+                }
+                .setCancelClickListener { it.dismissWithAnimation() }
+                .show()
         }
         binding.buttonAdd.setOnClickListener {
             findNavController().navigate(R.id.action_retrofitFragment_to_addDataFragment)

@@ -1,4 +1,4 @@
-package com.example.cactus
+package com.example.cactus.ui.loginAccount
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
+import cn.pedant.SweetAlert.SweetAlertDialog
+import com.example.cactus.R
 import com.example.cactus.databinding.FragmentRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -52,35 +54,33 @@ class RegisterFragment : Fragment() {
                 user.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(requireActivity()) { task ->
                         if (task.isSuccessful) {
-
-                            val alertDialogBuilder = AlertDialog.Builder(requireContext())
-                            alertDialogBuilder.setTitle("Registration Successful!")
-                            alertDialogBuilder.setMessage("Please log in")
-                            alertDialogBuilder.setPositiveButton("Back to Login") { _, _ ->
-
-                                findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
-                            }
-                            alertDialogBuilder.setNegativeButton("Close") { dialog, _ ->
-
-                                binding.usernameRe.editText?.text = null
-                                binding.passwordRe.editText?.text = null
-                                binding.passwordConfirm.editText?.text = null
-                                dialog.dismiss()
-                            }
-                            val alertDialog = alertDialogBuilder.create()
-                            alertDialog.show()
+                            SweetAlertDialog(requireContext(), SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText("Registration Successful!")
+                                .setContentText("Please log in")
+                                .setConfirmClickListener {
+                                    it.dismissWithAnimation()
+                                    findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+                                }
+                                .show()
                         } else {
-                            Toast.makeText(
-                                requireContext(), task.exception!!.message,
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            SweetAlertDialog(requireContext(), SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText("Error")
+                                .setContentText(task.exception!!.message)
+                                .show()
                         }
                     }
             } else {
-                Toast.makeText(requireContext(), "Password and Confirm Password do not match", Toast.LENGTH_SHORT).show()
+                SweetAlertDialog(requireContext(), SweetAlertDialog.ERROR_TYPE)
+                    .setTitleText("Error")
+                    .setContentText("Password and Confirm Password do not match")
+                    .show()
             }
         } else {
-            Toast.makeText(requireContext(), "Email, Password, and Confirm Password cannot be empty", Toast.LENGTH_SHORT).show()
+            SweetAlertDialog(requireContext(), SweetAlertDialog.ERROR_TYPE)
+                .setTitleText("Error")
+                .setContentText("Email, Password, and Confirm Password cannot be empty")
+                .show()
         }
     }
+
 }

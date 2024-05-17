@@ -27,10 +27,11 @@
                 app:queryHint="Search Here...." />
             <ImageView
                 android:id="@+id/btn_logout"
-                android:layout_marginTop="10dp"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_3_dots"/>
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="10dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_logout"/>
         </LinearLayout>
 
         <TextView

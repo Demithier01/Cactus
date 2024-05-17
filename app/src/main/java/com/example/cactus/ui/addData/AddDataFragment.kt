@@ -54,11 +54,12 @@ class AddDataFragment : Fragment() {
 
             if (!hasEmptyField) {
                 val newSpeciesItem = SpeciesItem(
-                binding.addId.editText?.text.toString(),
-                        binding.addName.editText?.text.toString(),
-                binding.sci.editText?.text.toString(), binding.addDescription.editText?.text.toString(),
-                binding.aliment.editText?.text.toString(),
-                binding.addUrlImg.editText?.text.toString()
+                    binding.addId.editText?.text.toString(),
+                    binding.addName.editText?.text.toString(),
+                    binding.sci.editText?.text.toString(),
+                    binding.addDescription.editText?.text.toString(),
+                    binding.aliment.editText?.text.toString(),
+                    binding.addUrlImg.editText?.text.toString()
                 )
                 viewModel.createItem(newSpeciesItem)
                 findNavController().popBackStack()

@@ -54,6 +54,7 @@ class UpdateFragment : Fragment() {
                     aliment = aliment,
                     image = image
                 )
+                Toast.makeText(requireContext(), "Updated successfully", Toast.LENGTH_SHORT).show()
                 speciesItem.id?.let { it1 -> viewModel.updateDataById(it1, updatedSpeciesItem) }
                 findNavController().popBackStack()
             } else {
