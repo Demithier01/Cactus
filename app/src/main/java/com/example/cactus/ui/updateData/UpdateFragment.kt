@@ -9,8 +9,8 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.cactus.api.RetrofitInstance
-import com.example.cactus.api.SpeciesService
-import com.example.cactus.api.SpeciesServiceFactory
+import com.example.cactus.api.ApiService
+import com.example.cactus.api.ServiceFactory
 import com.example.cactus.databinding.FragmentUpdateBinding
 import com.example.cactus.model.SpeciesItem
 import com.example.cactus.ui.retrofit.RetrofitViewModel
@@ -26,8 +26,8 @@ class UpdateFragment : Fragment() {
     ): View {
         binding = FragmentUpdateBinding.inflate(inflater, container, false)
 
-        val speciesService = RetrofitInstance.getRetrofitInstance().create(SpeciesService::class.java)
-        val viewModelFactory = SpeciesServiceFactory(speciesService)
+        val apiService = RetrofitInstance.getRetrofitInstance().create(ApiService::class.java)
+        val viewModelFactory = ServiceFactory(apiService)
         viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(RetrofitViewModel::class.java)
 
         speciesItem = arguments?.getParcelable("id") ?: SpeciesItem()

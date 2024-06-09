@@ -121,24 +121,14 @@
 
             <com.example.cactus.component.CustomButton
                 android:id="@+id/btnUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
                 android:text="@string/update"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                style="@style/CustomButtonStyle"/>
 
             <com.example.cactus.component.CustomButtonOutline
                 android:id="@+id/btnBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="40dp"
                 android:text="BACK"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                style="@style/CustomButtonStyle"/>
         </LinearLayout>
     </ScrollView>
 

@@ -8,26 +8,26 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.cactus.R
 import com.example.cactus.api.RetrofitInstance
-import com.example.cactus.api.SpeciesService
-import com.example.cactus.api.SpeciesServiceFactory
-import com.example.cactus.databinding.FragmentAddDataBinding
+import com.example.cactus.api.ApiService
+import com.example.cactus.api.ServiceFactory
+import com.example.cactus.databinding.FragmentAddBinding
 import com.example.cactus.model.SpeciesItem
 import com.example.cactus.ui.retrofit.RetrofitViewModel
 
 class AddDataFragment : Fragment() {
-    private lateinit var binding: FragmentAddDataBinding
+    private lateinit var binding: FragmentAddBinding
     private lateinit var viewModel: RetrofitViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentAddDataBinding.inflate(inflater, container, false)
+        binding = FragmentAddBinding.inflate(inflater, container, false)
 
-        val speciesService = RetrofitInstance.getRetrofitInstance().create(SpeciesService::class.java)
-        val viewModelFactory = SpeciesServiceFactory(speciesService)
+        val apiService = RetrofitInstance.getRetrofitInstance().create(ApiService::class.java)
+        val viewModelFactory = ServiceFactory(apiService)
         viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(RetrofitViewModel::class.java)
 
         binding.btnAdd.setOnClickListener {

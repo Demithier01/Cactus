@@ -4,13 +4,13 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.cactus.api.SpeciesService
+import com.example.cactus.api.ApiService
 import com.example.cactus.model.SpeciesItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel() {
+class RetrofitViewModel(private val apiService: ApiService) : ViewModel() {
 
     private val _speciesList = MutableLiveData<List<SpeciesItem>>()
     val speciesList: LiveData<List<SpeciesItem>> = _speciesList
@@ -24,7 +24,7 @@ class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel(
 
     //GET Data
     fun fetchData() {
-        val getCall = speciesService.getSpecies()
+        val getCall = apiService.getSpecies()
         getCall.enqueue(object : Callback<Map<String, SpeciesItem>> {
             override fun onResponse(call: Call<Map<String, SpeciesItem>>, response: Response<Map<String, SpeciesItem>>) {
                 if (response.isSuccessful) {
@@ -49,7 +49,7 @@ class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel(
     fun createItem(speciesItem: SpeciesItem) {
         val id = speciesItem.id
         if (id != null) {
-        val postCall = speciesService.createSpecies(id,speciesItem)
+        val postCall = apiService.createSpecies(id,speciesItem)
         postCall.enqueue(object : Callback<SpeciesItem> {
             override fun onResponse(call: Call<SpeciesItem>, response: Response<SpeciesItem>) {
                 if (response.isSuccessful) {
@@ -69,7 +69,7 @@ class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel(
     }}
     //UPDATE
     private fun updateItem(updatedSpecies: SpeciesItem) {
-        val updateCall = speciesService.updateSpecies(updatedSpecies.id, updatedSpecies)
+        val updateCall = apiService.updateSpecies(updatedSpecies.id, updatedSpecies)
         updateCall.enqueue(object : Callback<SpeciesItem> {
             override fun onResponse(call: Call<SpeciesItem>, response: Response<SpeciesItem>) {
                 if (response.isSuccessful) {
@@ -94,7 +94,7 @@ class RetrofitViewModel(private val speciesService: SpeciesService) : ViewModel(
     fun deleteItem(speciesItem: SpeciesItem, onResult: (Boolean) -> Unit) {
         val id = speciesItem.id
         if (id != null) {
-            val deleteCall = speciesService.deleteSpecies(id)
+            val deleteCall = apiService.deleteSpecies(id)
             deleteCall.enqueue(object : Callback<SpeciesItem> {
                 override fun onResponse(call: Call<SpeciesItem>, response: Response<SpeciesItem>) {
                     if (response.isSuccessful) {

@@ -9,12 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.cactus.R
-import com.example.cactus.databinding.FragmentRetrofitBinding
 import com.example.cactus.databinding.FragmentSplashScreenBinding
-import okhttp3.internal.http2.Http2Reader
 
 
-class FragmentSplashScreen : Fragment() {
+class SplashScreenFragment : Fragment() {
     private lateinit var binding: FragmentSplashScreenBinding
 
     override fun onCreateView(

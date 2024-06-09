@@ -3,15 +3,9 @@ package com.example.cactus.ui.retrofit
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.compose.ui.window.Dialog
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -19,8 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.example.cactus.R
 import com.example.cactus.api.RetrofitInstance
-import com.example.cactus.api.SpeciesService
-import com.example.cactus.api.SpeciesServiceFactory
+import com.example.cactus.api.ApiService
+import com.example.cactus.api.ServiceFactory
 import com.example.cactus.databinding.FragmentRetrofitBinding
 import com.example.cactus.model.SpeciesItem
 import com.example.cactus.view.SpeciesAdapter
@@ -37,9 +31,9 @@ class RetrofitFragment : Fragment() {
         binding = FragmentRetrofitBinding.inflate(inflater, container, false)
 
         val retrofit = RetrofitInstance.getRetrofitInstance()
-        val speciesService = retrofit.create(SpeciesService::class.java)
+        val apiService = retrofit.create(ApiService::class.java)
 
-        val viewModelFactory = SpeciesServiceFactory(speciesService)
+        val viewModelFactory = ServiceFactory(apiService)
         viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(RetrofitViewModel::class.java)
         viewModel.speciesList.observe(viewLifecycleOwner, Observer { speciesList ->
             adapterSpecies = SpeciesAdapter(speciesList,

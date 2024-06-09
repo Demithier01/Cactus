@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.loginAccount.RegisterFragment"
+    tools:context=".ui.login.RegisterFragment"
     android:background="@drawable/background_login">
 
     <LinearLayout
@@ -40,43 +40,33 @@
             android:background="@drawable/background_login2"
             android:orientation="vertical">
 
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:gravity="center"-->
-<!--                android:text="Login"-->
-<!--                android:textSize="25dp"-->
-<!--                android:textStyle="bold" />-->
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/username_re"
                 style="@style/CustomTextInputLayoutStyle"
                 android:layout_marginTop="20dp"
-                android:hint="Username"
+                android:hint="Email"
                 android:padding="4dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-
                 </com.google.android.material.textfield.TextInputEditText>
+
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/password_re"
                 style="@style/CustomTextInputLayoutStyle"
-                android:layout_marginTop="10dp"
                 android:enabled="true"
                 android:hint="Password"
                 android:padding="4dp"
-                app:endIconDrawable="@drawable/ic_eye"
                 app:endIconMode="password_toggle">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -87,23 +77,23 @@
                 style="@style/CustomTextInputLayoutStyle"
                 android:hint="Confirm Password"
                 android:padding="4dp"
-                app:endIconDrawable="@drawable/ic_eye"
                 app:endIconMode="password_toggle">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword">
 
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
+            <com.example.cactus.component.CustomButton
                 android:id="@+id/btnRegis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:text="sign up" />
+                android:text="Sign Up" />
 
             <TextView
                 android:layout_width="wrap_content"

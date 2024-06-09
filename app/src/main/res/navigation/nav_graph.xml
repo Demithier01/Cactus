@@ -36,7 +36,7 @@
         android:id="@+id/addDataFragment"
         android:name="com.example.cactus.ui.addData.AddDataFragment"
         android:label="fragment_add_data"
-        tools:layout="@layout/fragment_add_data" />
+        tools:layout="@layout/fragment_add" />
     <fragment
         android:id="@+id/updateFragment"
         android:name="com.example.cactus.ui.updateData.UpdateFragment"
@@ -44,7 +44,7 @@
         tools:layout="@layout/fragment_update" />
     <fragment
         android:id="@+id/fragmentSplashScreen"
-        android:name="com.example.cactus.ui.FragmentSplashScreen"
+        android:name="com.example.cactus.ui.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
 
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.cactus.ui.loginAccount.LoginFragment"
+        android:name="com.example.cactus.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -66,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.cactus.ui.loginAccount.RegisterFragment"
+        android:name="com.example.cactus.ui.login.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
